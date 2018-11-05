@@ -1,4 +1,4 @@
-package com.example.muscleman.controller;
+/*package com.example.muscleman.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,3 +11,4 @@ public class HomeController {
         return "index.html";
     }
 }
+*/
