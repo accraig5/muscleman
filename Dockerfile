@@ -1,4 +1,4 @@
-FROM openjdk:10-jdk-slim
+FROM openjdk:8-jdk-slim
 VOLUME /tmp
 ADD build/libs/muscleman-0.0.1-SNAPSHOT.jar muscleman-0.0.1.jar
 RUN mkdir -p src/main/
