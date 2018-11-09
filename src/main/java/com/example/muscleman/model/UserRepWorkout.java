@@ -15,7 +15,10 @@ public class UserRepWorkout {
     Integer workout_id;
 
     Integer repsComplete[];
+    
     Integer setsComplete;
+    
     Integer weight[];
+    
     String date;
 }
