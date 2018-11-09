@@ -11,7 +11,7 @@ public class UserRepWorkout {
 
     @Id
     Integer user_id;
-    @Id
+
     Integer workout_id;
 
     Integer repsComplete[];
