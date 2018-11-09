@@ -1,4 +1,3 @@
-/*
 package com.example.muscleman.model;
 
 import javax.persistence.Entity;
@@ -29,4 +28,4 @@ public class MuscleGroup {
     public void setName(String name) {
         this.name = name;
     }
-}*/
+}

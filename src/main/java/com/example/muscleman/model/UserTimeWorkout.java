@@ -1,4 +1,3 @@
-/*
 package com.example.muscleman.model;
 
 import javax.persistence.Entity;
@@ -61,4 +60,3 @@ public class UserTimeWorkout {
         this.date = date;
     }
 }
-*/
