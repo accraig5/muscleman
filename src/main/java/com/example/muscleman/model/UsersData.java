@@ -1,3 +1,4 @@
+/*
 package com.example.muscleman.model;
 
 import javax.persistence.Entity;
@@ -50,3 +51,4 @@ public class UsersData {
         this.weight = weight;
     }
 }
+*/

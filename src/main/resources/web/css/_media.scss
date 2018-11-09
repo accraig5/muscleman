@@ -1,0 +1,239 @@
+@media screen and (max-width: 1600px){
+	#contactparagraph {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 1400px){
+	#index_2 span {
+		font-size: 130%;
+	}
+}
+
+@media screen and (max-width: 1330px){
+	.wrapper {
+		max-width: 960px;
+	}
+	.scene {
+		margin: 30px;
+	}
+  .historypage .parallax-container {
+    height: 50vh;
+  }
+	#index_2, #video_1, #box{
+		min-height: 25vh;
+	}
+}
+
+@media #{$medium-and-down} {
+  .parallax-container .section {
+    position: absolute;
+  }
+
+  nav {
+    height: 10vh;
+  }
+
+  nav .brand-logo img {
+    max-width: 10vw;
+  }
+
+  #scrollmid {
+    color: white;
+    transition: 0;
+  }
+
+  #index_2 {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #video_1 {
+    min-height: 40vh;
+    width: 100%;
+    float: none;
+  }
+
+  #box {
+    display: none;
+  }
+
+  nav .brand-logo {
+    margin-left: 0;
+    font-size: 5vw;
+  }
+
+  .parallax-container {
+    min-height: 90vh;
+  }
+
+	.scene {
+		display: none;
+	}
+
+	.notDesktop {
+		display: block;
+	}
+	.wrapper {
+		display: none;
+	}
+
+	.slantB {
+		height: 20vh;
+	}
+
+  #aboutPMD {
+  }
+
+  #aboutPMDBtn {
+    display: none;
+  }
+
+  #scrolldownarrow {
+    margin-top: 80vh;
+  }
+
+  #footernav li {
+    padding-bottom: 4%;
+  }
+
+	#contactFillout {
+		width: 90% !important;
+	}
+	#hppcontainer {
+    height: 90vh;
+  }
+	#contactdiv {
+		font-size: 12px;
+		i {
+			margin-left: 10%;
+		}
+	}
+	#hppPastSpan2 {
+		display: none;
+	}
+	#footerContact {
+		text-align: center;
+		border-bottom: 2px solid black;
+		padding-bottom: 2vh;
+
+		.rightfootericon {
+			padding-left: 20%;
+		}
+	}
+}
+
+/* Extra small devices (phones, 600px and down) */
+
+@media #{$small-and-down} {
+  #index-banner .section {
+    top: 0;
+  }
+
+  nav {
+    height: 10vh;
+  }
+
+	nav .brand-logo {
+		padding-top: 1.4vh !important;
+		float: left !important;
+	}
+
+  nav .brand-logo img {
+    max-width: 14vw;
+  }
+
+  #index_2 {
+    width: 85%;
+    min-height: 40vh !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #video_1 {
+    min-height: 25vh !important;
+  }
+
+  #scrollmid {
+    color: white;
+    transition: 0;
+  }
+
+  nav .brand-logo {
+    margin: 0;
+    padding: 0;
+    font-size: 5vw;
+  }
+
+  .parallax-container {
+    min-height: 380px;
+  }
+
+  #footernav li {
+    padding-bottom: 6%;
+  }
+
+	.mobile {
+		display: block !important;
+	}
+
+	.desktop {
+		display: none !important;
+	}
+
+	.slantA {
+		height: 30vh;
+	}
+
+	.slantA img {
+		width: 250%;
+	}
+
+	.slantB {
+		height: 20vh;
+	}
+
+	.slantB .insetshadow {
+		font-size: 32px;
+	}
+
+	.historyHPP .description {
+		h4 {
+			font-size: 20px;
+			margin: 1%;
+		}
+		h5 {
+			font-size: 14px;
+			padding: 0 0 5% 0;
+			margin: 0;
+		}
+		p {
+			font-size: 10px;
+			line-height: 10px;
+		}
+	}
+	#contactdiv {
+		height: 100%;
+	}
+	.historyHPP {
+		height: 21vh
+	}
+
+	#hppcontainer {
+    height: 80vh;
+  }
+
+	#contactdiv {
+		i {
+			margin-left: 25%;
+		}
+	}
+	#footerContact .rightfootericon, #footerContact .leftfootericon {
+		padding-left: 22vw;
+	}
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media #{$large-and-up} {
+}

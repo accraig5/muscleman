@@ -1,3 +1,4 @@
+/*
 package com.example.muscleman.model;
 
 import javax.persistence.Entity;
@@ -58,4 +59,4 @@ public class RepWorkout {
     public void setRec_sets(Integer rec_sets) {
         this.rec_sets = rec_sets;
     }
-}
+}*/

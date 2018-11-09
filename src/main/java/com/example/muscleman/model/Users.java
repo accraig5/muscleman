@@ -1,3 +1,4 @@
+/*
 package com.example.muscleman.model;
 
 import javax.persistence.Entity;
@@ -19,3 +20,4 @@ public class Users {
         this.id = id;
     }
 }
+*/

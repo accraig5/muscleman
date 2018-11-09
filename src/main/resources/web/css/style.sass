@@ -1,0 +1,222 @@
+// compileOnSave, compileExpanded, expandedFilenamePattern
+@import '_reset.scss'
+@import "../node_modules/materialize-css/sass/materialize"
+
+//import fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed')
+@import url('https://fonts.googleapis.com/css?family=Open+Sans')
+
+//Navigation Bar
+@import '_nav.sass'
+
+//Index page Animations
+@import '_indexanimation.sass'
+
+.mobile
+  display: none
+
+  .animate
+    opacity: 0
+
+.notDesktop
+  display: none
+
+h2, h3, h4, h5, h6, p, span
+  font-family: 'Roboto Condensed', sans-serif
+
+h2, h3
+  text-transform: uppercase
+
+.loading
+  overflow: hidden
+  height: 100vh
+
+h1
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif
+  font-size: 4em
+  padding: 0 2% 2% 2%
+  text-align: center
+  text-transform: uppercase
+  text-rendering: optimizeLegibility
+
+  &.insetshadow
+    color: #A05101
+    letter-spacing: .1em
+    text-shadow: -1px -1px 1px #6F3800, 2px 2px 1px #FF9E3A
+
+  &.insetshadow2
+    color: #9D9D9D
+    letter-spacing: .1em
+    text-shadow: -1px -1px 1px #575757, 2px 2px 1px #DEDEDE
+
+body
+  background-color: lightgrey
+
+#index-banner h1, h5, h2
+  margin-bottom: 1vh
+
+#index-banner h5
+  color: #E3CBBB
+
+#scrollbtn1
+  font-size: 50px !important
+  color: black
+  transition: color 0.3s ease-in-out
+
+  &:hover
+    cursor: pointer
+    color: white
+
+#scrollbtn2
+  font-size: 50px !important
+  color: black
+  transition: color 0.3s ease-in-out
+  padding-bottom: 5%
+
+  &:hover
+    cursor: pointer
+    color: white
+
+#scrolldownarrow
+  margin-top: 58vh
+  vertical-align: bottom
+
+#scrollabout
+  min-height: 40vh
+
+p
+  line-height: 2rem
+
+.sidenav-trigger
+  color: #26a69a
+
+#index_1
+  padding-top: 11vh
+  min-height: 100vh
+  line-height: 0
+  height: auto
+  color: rgba(255,255,255,.9)
+
+#aboutPMD
+  padding-bottom: 5vh
+  border-bottom: 1px solid black
+
+#index_2
+  min-height: 50vh
+  padding: 1% 0 2% 0
+
+  span
+    text-transform: uppercase
+    font-weight: 500
+    font-size: 160%
+
+#video_1
+  min-height: 45vh
+  width: 57%
+  float: center
+
+#box
+  min-height: 45vh
+  padding: 3%
+  width: 43%
+  float: right
+
+#index_3
+  min-height: 80vh
+
+.currentproj
+  background-color: grey
+  padding: 2%
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.7) 75%)
+
+.parallax-container .section
+  width: 100%
+
+.overlay
+  background-color: grey
+
+.desc
+  opacity: 0
+
+.icon-block
+  padding: 0 15px
+
+.icon-block .material-icons
+  font-size: inherit
+
+footer.page-footer
+  margin: 0
+
+.container h2
+  padding-bottom: 3vh
+
+#aboutPMDBtn
+  float: right
+  margin-top: 3%
+
+.parallaxoverlay
+  padding: 0
+  margin: 0
+  height: 100vh
+  background-color: grey
+  opacity: 0.5
+
+.hideImage
+  display: none
+
+.nopadding
+  padding: 0 !important
+
+.nomargin
+  margin: 0 !important
+
+.padding
+  padding-top: 11vh
+
+.pageComingSoon
+  margin-top: 40vh
+
+.smallerimg img
+  max-width: 100%
+
+.borders
+  border-left: 1px solid black
+  border-right: 1px solid black
+
+.come-in
+  -webkit-transform: translateY(100px)
+  -moz-transform: translateY(100px)
+  transform: translateY(100px)
+  -webkit-transition: opacity 3s
+  -moz-transition: opacity 3s
+  transition: opacity 3s
+  animation: come-in 1s ease forwards
+  opacity: 1 !important
+
+.already-visible
+  -webkit-transform: translateY(0)
+  -moz-transform: translateY(0)
+  transform: translateY(0)
+  animation: none
+  -webkit-transition: none
+  -moz-transition: none
+  transition: none
+  opacity: 1 !important
+
+.hovercolor
+
+  &:hover
+    color: lightgrey !important
+
+  img
+    width: 2.5vh
+
+#footernav li
+  padding-bottom: 3%
+
+@keyframes come-in
+  to
+    transform: translateY(0)
+
+//Importing for different media sizes
+@import '_media.scss'

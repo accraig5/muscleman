@@ -1,0 +1,53 @@
+.sidenav-trigger
+  float: right !important
+  height: 100% !important
+
+nav.nav-down
+  position: fixed
+  z-index: 1000
+  top: 0
+  -webkit-transition: top 0.2s ease-in-out
+  transition: top 0.2s ease-in-out
+
+
+nav.nav-up
+  position: fixed
+  z-index: 1000
+  top: -11vh
+  -webkit-transition: top 0.4s ease-in-out
+  transition: top 0.4s ease-in-out
+
+
+nav
+  min-height: 11vh
+
+  ul
+    margin-right: 5vw
+
+    li:hover
+      background-color: #393939
+
+    .activated
+      background-color: #212121
+
+  .brand-logo
+    margin-left: 5vw
+    height: 100%
+
+    img
+      max-width: 8vw
+      max-height: auto
+      padding-right: 1vw
+      padding-bottom: 1vh
+      vertical-align: middle
+
+nav ul a,
+nav .brand-logo
+  color: white-text
+  padding: 20px
+
+.dropdown-content
+  background-color: #A6A6A6
+
+  li a
+    color: black
