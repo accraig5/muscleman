@@ -14,11 +14,11 @@ public class UserRepWorkout {
 
     Integer workout_id;
 
-    Integer repsComplete[];
+    ArrayList<Integer> repsComplete;
     
     Integer setsComplete;
     
-    Integer weight[];
+    ArrayList<Integer> weight;
     
     String date;
 }
