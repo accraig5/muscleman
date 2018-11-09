@@ -11,7 +11,6 @@ public class UserTimeWorkout {
     @Id
     Integer user_id;
 
-    @Id
     Integer workout_id;
 
     String timeComplete;
