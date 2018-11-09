@@ -1,5 +1,6 @@
 package com.example.muscleman.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -15,9 +16,11 @@ public class RepWorkout {
 
     String text;
 
-    Integer rec_reps;
+    @Column(name = "rec_reps")
+    Integer recReps;
 
-    Integer rec_sets;
+    @Column(name = "rec_sets")
+    Integer recSets;
 
     public Integer getId() {
         return id;
@@ -43,19 +46,19 @@ public class RepWorkout {
         this.text = text;
     }
 
-    public Integer getRec_reps() {
-        return rec_reps;
+    public Integer getRecReps() {
+        return recReps;
     }
 
-    public void setRec_reps(Integer rec_reps) {
-        this.rec_reps = rec_reps;
+    public void setRecReps(Integer recReps) {
+        this.recReps = recReps;
     }
 
-    public Integer getRec_sets() {
-        return rec_sets;
+    public Integer getRecSets() {
+        return recSets;
     }
 
-    public void setRec_sets(Integer rec_sets) {
-        this.rec_sets = rec_sets;
+    public void setRecSets(Integer recSets) {
+        this.recSets = recSets;
     }
 }

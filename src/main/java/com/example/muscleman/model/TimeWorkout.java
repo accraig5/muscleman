@@ -1,5 +1,6 @@
 package com.example.muscleman.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -15,7 +16,8 @@ public class TimeWorkout {
 
     String description;
 
-    String rec_time;
+    @Column(name = "rec_time")
+    String recTime;
 
     public Integer getId() {
         return id;
@@ -41,11 +43,11 @@ public class TimeWorkout {
         this.description = description;
     }
 
-    public String getRec_time() {
-        return rec_time;
+    public String getRecTime() {
+        return recTime;
     }
 
-    public void setRec_time(String rec_time) {
-        this.rec_time = rec_time;
+    public void setRecTime(String recTime) {
+        this.recTime = recTime;
     }
 }
