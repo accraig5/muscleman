@@ -10,13 +10,13 @@ import javax.persistence.Table;
 public class UserData {
 
     @Id
-    Integer id;
+    private Integer id;
 
-    Integer age;
+    private Integer age;
 
-    Double height;
+    private Double height;
 
-    Double weight;
+    private Double weight;
 
     public Integer getId() {
         return id;

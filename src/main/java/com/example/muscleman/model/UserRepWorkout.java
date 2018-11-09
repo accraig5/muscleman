@@ -13,18 +13,18 @@ public class UserRepWorkout {
 
     @Id
     @Column(name = "user_id")
-    Integer userId;
+    private Integer userId;
 
     @Column(name = "workout_id")
-    Integer workoutId;
+    private Integer workoutId;
 
-    ArrayList<Integer> repsComplete;
-    
-    Integer setsComplete;
-    
-    ArrayList<Integer> weight;
-    
-    String date;
+    private ArrayList<Integer> repsComplete;
+
+    private Integer setsComplete;
+
+    private ArrayList<Integer> weight;
+
+    private String date;
 
     public Integer getUserId() {
         return userId;

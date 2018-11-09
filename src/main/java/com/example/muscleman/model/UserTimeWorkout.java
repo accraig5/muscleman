@@ -11,16 +11,16 @@ public class UserTimeWorkout {
 
     @Id
     @Column(name = "user_id")
-    Integer userId;
+    private Integer userId;
 
     @Column(name = "workout_id")
-    Integer workoutId;
+    private Integer workoutId;
 
-    String timeComplete;
+    private String timeComplete;
 
-    Integer calories;
+    private Integer calories;
 
-    String date;
+    private String date;
 
     public Integer getUserId() {
         return userId;

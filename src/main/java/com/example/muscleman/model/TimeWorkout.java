@@ -10,14 +10,14 @@ import javax.persistence.Table;
 public class TimeWorkout {
 
     @Id
-    Integer id;
+    private Integer id;
 
-    String name;
+    private String name;
 
-    String description;
+    private String description;
 
     @Column(name = "rec_time")
-    String recTime;
+    private String recTime;
 
     public Integer getId() {
         return id;

@@ -10,17 +10,17 @@ import javax.persistence.Table;
 public class RepWorkout {
 
     @Id
-    Integer id;
+    private Integer id;
 
-    String name;
+    private String name;
 
-    String text;
+    private String text;
 
     @Column(name = "rec_reps")
-    Integer recReps;
+    private Integer recReps;
 
     @Column(name = "rec_sets")
-    Integer recSets;
+    private Integer recSets;
 
     public Integer getId() {
         return id;
