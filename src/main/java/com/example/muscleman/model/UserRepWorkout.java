@@ -1,4 +1,3 @@
-/*
 package com.example.muscleman.model;
 
 import javax.persistence.Entity;
@@ -20,4 +19,3 @@ public class UserRepWorkout {
     Integer weight[];
     String date;
 }
-*/
