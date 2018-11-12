@@ -1,0 +1,51 @@
+server:
+  port: 8080
+
+spring:
+  devtools:
+    restart:
+      enabled: false
+
+  datasource:
+    url: jdbc:postgresql://database:5432/muscleman
+    username: postgres
+    password: postgres
+
+  jpa:
+    generate-ddl: true
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+
+  thymeleaf:
+    cache: false
+    check-template: true
+    check-template-location: true
+    servlet:
+      content-type: text/html
+    enabled: true
+    encoding: UTF-8
+    mode: HTML
+    prefix: classpath:/templates/
+    suffix: .html
+
+logging:
+  level:
+    root: WARN
+    com.memorynotfound: DEBUG
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+#spring.datasource.url= jdbc:postgresql://database:5432/muscleman
+#spring.datasource.username=postgres
+#spring.datasource.password=postgres
+#spring.jpa.generate-ddl=true
+#spring.jpa.hibernate.ddl-auto=create-drop
+
+# Disable feature detection by this undocumented parameter. Check the org.hibernate.engine.jdbc.internal.JdbcServiceImpl.configure method for more details.
+#spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults = false
+
+# Because detection is disabled you have to set correct dialect by hand.
+#spring.jpa.database-platform=org.hibernate.dialect.PostgreSQL9Dialect
+#debug=true

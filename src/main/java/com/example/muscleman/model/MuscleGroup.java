@@ -9,9 +9,9 @@ import javax.persistence.Table;
 public class MuscleGroup {
 
     @Id
-    Integer id;
+    private Integer id;
 
-    String name;
+    private String name;
 
     public Integer getId() {
         return id;
