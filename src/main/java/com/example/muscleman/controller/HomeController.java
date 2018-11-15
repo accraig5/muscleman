@@ -35,6 +35,11 @@ public class HomeController {
         return "error";
     }
 
+    @GetMapping("/test")
+    public String test() {
+        return "test";
+    }
+
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public String registration(WebRequest request, Model model) {
         UserDto userDto = new UserDto();
