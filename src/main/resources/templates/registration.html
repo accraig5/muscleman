@@ -1,110 +1,157 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Muscle Manager is a new Generation workout tool, designed to help you succeed."/>
+    <meta name="keywords" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+    <!-- Links to script, css, and other -->
+    <link rel="icon" href="">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <title>MuscleManager | Home</title>
+</head>
+
 <body>
-<div class="container">
-    <form class="form-horizontal" role="form" method="POST" th:action="@{/registration}" th:object="${user}">
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-                <div class="alert alert-success" role="alert" th:if="${msg}" th:utext="${msg}">
-                </div>
+<header>
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="/">Category 1</a></li>
+        <li class="divider"></li>
+        <li><a href="/">Category 2</a></li>
+        <li class="divider"></li>
+        <li><a href="/">Category 3</a></li>
+    </ul>
+    <ul id="mobiledropdown" class="dropdown-content">
+        <li><a href="/">Category 1</a></li>
+        <li class="divider"></li>
+        <li><a href="/">Category 2</a></li>
+        <li class="divider"></li>
+        <li><a href="/">Category 3</a></li>
+    </ul>
+    <div id="1">
+        <nav class="black nav-down">
+            <div class="nav-wrapper">
+                <a id="logo-container" class="brand-logo valign-wrapper" href="index"><img src="" alt=""></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="index">Home</a></li>
+                    <li class="activated"><a href="login">Login</a></li>
+                    <li><a href="/">How To Use</a></li>
+                    <li><a class="dropdown-trigger" data-target="dropdown1">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a href="/">FAQ</a></li>
+                </ul>
+
+                <ul id="nav-mobile" class="sidenav grey lighten-2">
+                    <li><a href="index">Home</a></li>
+                    <li><a href="login">Login</a></li>
+                    <li><a href="/">How To Use</a></li>
+                    <li><a class="dropdown-button" data-target="mobiledropdown" data-beloworigin="true">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a href="/">FAQ</a></li>
+                </ul>
+                <a href="#" data-target="nav-mobile" class="sidenav-trigger valign-wrapper"><i class="material-icons white-text">menu</i></a>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-                <h2>Register New User</h2>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 field-label-responsive">
-                <label for="firstname">Last Name</label>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
-                        <input type="text" th:field="*{firstName}" class="form-control" id="firstname"
-                               placeholder="First name" required autofocus>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="white-text black padding z-depth-2" style="z-index:1000;"></div>
+    <div class="row" style="height: 70vh; margin-top: 4%;">
+        <div class="container aboutrow" style="width: 50%; background-color: #E6E6E6">
+            <form id="register" role="form" method="POST" th:action="@{/registration}" th:object="${user}">
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="alert alert-success" role="alert" th:if="${msg}" th:utext="${msg}">
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 field-label-responsive">
-                <label for="lastname">Last Name</label>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
-                        <input type="text" th:field="*{lastName}" class="form-control" id="lastname"
-                               placeholder="Last name" required autofocus>
+                <div class="section row">
+                    <div class="input-field col s12">
+                        <input id="firstName" th:field="*{firstName}" name="firstName" type="text" required="true">
+                        <label for="firstName">First Name:</label>
+                        <span class="helper-text" data-error="Enter Your First Name" data-success="">Please enter your First Name</span>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="lastName" th:field="*{lastName}" name="lastName" type="text" required="true">
+                        <label for="lastName">Last Name:</label>
+                        <span class="helper-text" data-error="Enter Your Last Name" data-success="">Please enter your Last Name</span>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="username" th:field="*{username}" name="username" type="text" required="true">
+                        <label for="username">Username:</label>
+                        <span class="helper-text" data-error="Enter a Username" data-success="">Please enter a Username</span>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="email" th:field="*{email}" name="email" type="text" required="true">
+                        <label for="email">Email:</label>
+                        <span class="helper-text" data-error="Enter Your Email" data-success="">Please enter your Email</span>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="password" th:field="*{password}" name="password" type="password" required="true">
+                        <label for="password">Password:</label>
+                        <span class="helper-text" data-error="Enter a Password" data-success="">Please enter a Password</span>
                     </div>
                 </div>
-            </div>
+                <div class="col s12 l6">
+                    <span><a href="login">Already have an account? Login here.</a></span>
+                </div>
+                <div class="col s12 l6">
+                    <button id="registration_submit" class="grey darken-2 btn waves-effect waves-light right disabled" type="submit" form="register" name="action" style="margin-bottom: 5%;">Register
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
         </div>
+
+        </form>
+    </div>
+    </div>
+</main>
+
+<footer class="page-footer grey darken-4">
+    <div class="container">
         <div class="row">
-            <div class="col-md-3 field-label-responsive">
-                <label for="username">Username</label>
+            <div id="footerContact" class="col s12 l6">
+                <h5 class="white-text">Muscle Manager</h5><br>
+                <div class="col s12 m6 l12 valign-wrapper leftfootericon"><i class="material-icons">contact_phone</i>&nbsp; (222)-222-222 &nbsp;</div>
+                <div class="col s12 m6 l12 valign-wrapper rightfootericon"><i class="material-icons">contact_mail</i>&nbsp; &nbsp;info@musclemanager.com &nbsp;</div>
             </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
-                        <input type="text" th:field="*{username}" class="form-control" id="username"
-                               placeholder="Last name" required autofocus>
-                    </div>
-                </div>
+            <div class="col l3 s4 offset-s1">
+                <h5 class="white-text">Navigation</h5>
+                <ul id="footernav">
+                    <li><a class="white-text hovercolor" href="index">Home</a></li>
+                    <li><a class="white-text hovercolor" href="login">Login</a></li>
+                    <li><a class="white-text hovercolor" href="/">How To Use</a></li>
+                    <li><a class="white-text hovercolor" href="/">FAQ</a></li>
+                </ul>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 field-label-responsive">
-                <label for="email">Email</label>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
-                        <input type="text" th:field="*{email}" class="form-control" id="email"
-                               placeholder="username@jackrutorial.com" required autofocus>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="form-control-feedback">
-                         <span class="text-danger align-middle" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
-                         </span>
-                </div>
+            <div class="col l3 s4 offset-s2">
+                <h5 class="white-text">Social Media</h5>
+                <ul>
+                    <li><a class="white-text hovercolor valign-wrapper" href=""><img src="img/social_media/facebook.svg" alt="">&nbsp; Facebook</a></li>
+                    <li><a class="white-text hovercolor valign-wrapper" href=""><img src="img/social_media/instagram.svg" alt="">&nbsp; Instagram</a></li>
+                    <li><a class="white-text hovercolor valign-wrapper" href="#!"><img src="img/social_media/linkedin.svg" alt="">&nbsp; LinkedIn</a></li>
+                    <li><a class="white-text hovercolor valign-wrapper" href="#!"><img src="img/social_media/twitter.svg" alt="">&nbsp; Twitter</a></li>
+                </ul>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-3 field-label-responsive">
-                <label for="password">Password</label>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group has-danger">
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
-                        <input type="password" th:field="*{password}" class="form-control" id="password"
-                               placeholder="Password" required>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="form-control-feedback">
-                         <span class="text-danger align-middle" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">
-                         </span>
-                </div>
-            </div>
+    </div>
+    <div class="footer-copyright black">
+        <div class="container valign-wrapper">
+            <i class="material-icons">copyright</i>&nbsp; Copyright &nbsp;<span class="grey-text lighten-3"> Muscle Manager LLC.</span>
         </div>
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-                <button type="submit" class="btn btn-success"><i class="fa fa-user-plus"></i> Register</button>
-            </div>
-        </div>
-    </form>
-</div>
+    </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="js/modernizr.js"></script>
+<script src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
+<script src="js/init.js"></script>
+
+
 </body>
+
 </html>

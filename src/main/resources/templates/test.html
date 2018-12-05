@@ -36,18 +36,18 @@
       <div id="1">
         <nav class="black nav-down">
           <div class="nav-wrapper">
-            <a id="logo-container" class="brand-logo valign-wrapper" href="index"><img src="" alt=""></a>
+            <a id="logo-container" class="brand-logo valign-wrapper" href="/"><img src="" alt=""></a>
             <ul class="right hide-on-med-and-down">
-              <li><a href="index">Home</a></li>
-              <li class="activated"><a href="login">Login</a></li>
-              <li><a href="/">How To Use</a></li>
+              <li class="activated"><a href="/index">Home</a></li>
+              <li><a href="/login">Login</a></li>
+              <li><a href="">How To Use</a></li>
               <li><a class="dropdown-trigger" data-target="dropdown1">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
-              <li><a href="/">FAQ</a></li>
+              <li><a href="">FAQ</a></li>
             </ul>
 
             <ul id="nav-mobile" class="sidenav grey lighten-2">
-              <li><a href="index">Home</a></li>
-              <li><a href="login">Login</a></li>
+              <li><a href="/index">Home</a></li>
+              <li><a href="/login">Login</a></li>
               <li><a href="/">How To Use</a></li>
               <li><a class="dropdown-button" data-target="mobiledropdown" data-beloworigin="true">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
               <li><a href="/">FAQ</a></li>
@@ -60,36 +60,9 @@
 
     <main>
       <div class="white-text black padding z-depth-2" style="z-index:1000;"></div>
-      <div class="row" style="height: 60vh; margin-top: 4%;">
-        <div th:if="${param.error}">
-          Invalid username and password.
-        </div>
-        <div th:if="${param.logout}">
-          You have been logged out.
-        </div>
-        <div id="contactFillout" class="container aboutrow" style="width: 50%; background-color: #E6E6E6">
-          <form id="signin" th:action="@{/login}" method="post">
-            <div class="section row">
-              <div class="input-field col s12">
-                <input id="username" name="username" type="text" required="true">
-                <label for="username">User Name:</label>
-                <span class="helper-text" data-error="Enter Your Username" data-success="">Please enter your Username</span>
-              </div>
-              <div class="input-field col s12">
-                <input id="password" name="password" type="password" required="true">
-                <label for="password">Password:</label>
-                <span class="helper-text" data-error="Invalid Password" data-success="">Please enter your Password</span>
-              </div>
-            </div>
-            <div class="col s12 l6">
-              <span><a href="registration">Don't have an account? Sign up here.</a></span>
-            </div>
-            <div class="col s12 l6">
-              <button id="login_submit" class="grey darken-2 btn waves-effect waves-light right disabled" type="submit" form="signin" name="action" style="margin-bottom: 5%;">Sign In
-                <i class="material-icons right">send</i>
-              </button>
-          </form>
-        </div>
+      <div class="row" style="height: 60vh; ">
+        <h1 class="center insetshadow2" style="padding: 20vh 0 0 0">TESTTESTTEST</h1>
+        <p class="center" style="font-size: 100%; color: #4B4B4B;">Its looks like the page you were looking for doesn't exist. If you clicked on a link in one of our pages, please <a href="./contact"><span style="font-weight: 900;">notify</span></a> us of this issue!</p>
       </div>
     </main>
 
@@ -104,8 +77,8 @@
           <div class="col l3 s4 offset-s1">
             <h5 class="white-text">Navigation</h5>
             <ul id="footernav">
-              <li><a class="white-text hovercolor" href="index">Home</a></li>
-              <li><a class="white-text hovercolor" href="login">Login</a></li>
+              <li><a class="white-text hovercolor" href="">Home</a></li>
+              <li><a class="white-text hovercolor" href="/">Login</a></li>
               <li><a class="white-text hovercolor" href="/">How To Use</a></li>
               <li><a class="white-text hovercolor" href="/">FAQ</a></li>
             </ul>
@@ -132,7 +105,6 @@
   <script src="js/modernizr.js"></script>
   <script src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
   <script src="js/init.js"></script>
-
 
 </body>
 
