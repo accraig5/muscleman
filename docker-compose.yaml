@@ -1,0 +1,23 @@
+version: '3.2'
+
+services:
+  database:
+    image: postgres
+    ports:
+      - 5000:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - type: volume
+        source: psql_data
+        target: /var/lib/postgresql/data
+    restart: always
+  muscleman:
+    image: muscleman/muscleman
+    ports:
+      - 8080:8080
+    depends_on:
+      - database
+
+volumes:
+  psql_data:
