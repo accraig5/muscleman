@@ -11,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -74,19 +73,7 @@ public class HomeController {
     @RequestMapping(value = "/workouts/view", method = RequestMethod.GET)
     public String viewWorkouts(Model model) {
         List<RepWorkout> repWorkouts = repWorkoutRepository.findAll();
-        ArrayList<RepWorkoutDto> repWorkoutDtos = new ArrayList<>();
-        for (RepWorkout r : repWorkouts) {
-            RepWorkoutDto repWorkoutDto = new RepWorkoutDto();
-            repWorkoutDto.setId(r.getId());
-            repWorkoutDto.setMuscleGroup(r.getMuscleGroup());
-            repWorkoutDto.setName(r.getName());
-            repWorkoutDto.setRecReps(r.getRecReps());
-            repWorkoutDto.setRecSets(r.getRecSets());
-            repWorkoutDto.setText(r.getText());
-            repWorkoutDto.setUserId(r.getUserId());
-            repWorkoutDtos.add(repWorkoutDto);
-        }
-        model.addAttribute("workouts", repWorkoutDtos);
+        model.addAttribute("workouts", repWorkouts);
 
         return "workouts/view";
     }

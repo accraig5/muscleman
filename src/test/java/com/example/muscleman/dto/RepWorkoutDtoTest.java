@@ -3,9 +3,6 @@ package com.example.muscleman.dto;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
@@ -14,7 +11,7 @@ public class RepWorkoutDtoTest {
     private static final Integer ID_CONSTANT;
     private static final String NAME_CONSTANT;
     private static final String TEXT_CONSTANT;
-    private static final List<Integer> REC_REPS_CONSTANT;
+    private static final String REC_REPS_CONSTANT;
     private static final Integer REC_SETS_CONSTANT;
     private static final Integer MUSCLE_GROUP_CONSTANT;
     private static final Integer USER_ID_CONSTANT;
@@ -22,9 +19,7 @@ public class RepWorkoutDtoTest {
         ID_CONSTANT = 0;
         NAME_CONSTANT = "name";
         TEXT_CONSTANT = "text";
-        REC_REPS_CONSTANT = new ArrayList<>();
-        REC_REPS_CONSTANT.add(5);
-        REC_REPS_CONSTANT.add(6);
+        REC_REPS_CONSTANT = "1, 2, 3";
         REC_SETS_CONSTANT = 1;
         MUSCLE_GROUP_CONSTANT = 2;
         USER_ID_CONSTANT = 3;
@@ -37,7 +32,7 @@ public class RepWorkoutDtoTest {
         repWorkoutDto.setId(ID_CONSTANT);
         repWorkoutDto.setName(NAME_CONSTANT);
         repWorkoutDto.setText(TEXT_CONSTANT);
-        repWorkoutDto.setRecReps((ArrayList<Integer>)REC_REPS_CONSTANT);
+        repWorkoutDto.setRecRepsList((String)REC_REPS_CONSTANT);
         repWorkoutDto.setRecSets(REC_SETS_CONSTANT);
         repWorkoutDto.setMuscleGroup(MUSCLE_GROUP_CONSTANT);
         repWorkoutDto.setUserId(USER_ID_CONSTANT);
@@ -87,16 +82,16 @@ public class RepWorkoutDtoTest {
 
     @Test
     public void getRecRepsTest() {
-        assertEquals(REC_REPS_CONSTANT, repWorkoutDto.getRecReps());
+        assertEquals(REC_REPS_CONSTANT, repWorkoutDto.getRecRepsList());
     }
 
     @Test
     public void setRecRepsTest() {
-        assertEquals(REC_REPS_CONSTANT, repWorkoutDto.getRecReps());
-        ArrayList<Integer> newRecReps = new ArrayList<>();
+        assertEquals(REC_REPS_CONSTANT, repWorkoutDto.getRecRepsList());
+        String newRecReps = "0, 0, 0";
         assertNotEquals(REC_REPS_CONSTANT, newRecReps);
-        repWorkoutDto.setRecReps(newRecReps);
-        assertEquals(newRecReps, repWorkoutDto.getRecReps());
+        repWorkoutDto.setRecRepsList(newRecReps);
+        assertEquals(newRecReps, repWorkoutDto.getRecRepsList());
     }
 
     @Test

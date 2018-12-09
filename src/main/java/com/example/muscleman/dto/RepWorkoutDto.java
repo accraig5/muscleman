@@ -2,7 +2,6 @@ package com.example.muscleman.dto;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
 
 public class RepWorkoutDto {
 
@@ -19,7 +18,7 @@ public class RepWorkoutDto {
 
     @NotNull
     @NotEmpty
-    private ArrayList<Integer> recReps;
+    private String recRepsList;
 
     @NotNull
     private Integer recSets;
@@ -54,12 +53,12 @@ public class RepWorkoutDto {
         this.text = text;
     }
 
-    public ArrayList<Integer> getRecReps() {
-        return recReps;
+    public String getRecRepsList() {
+        return recRepsList;
     }
 
-    public void setRecReps(ArrayList<Integer> recReps) {
-        this.recReps = recReps;
+    public void setRecRepsList(String recRepsList) {
+        this.recRepsList = recRepsList;
     }
 
     public Integer getRecSets() {
