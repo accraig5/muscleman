@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.ArrayList;
 
 @Entity
 @Table(name = "rep_workouts")
@@ -16,11 +17,17 @@ public class RepWorkout {
 
     private String text;
 
-    @Column(name = "rec_reps")
-    private Integer recReps;
+    @Column(name = "recommended_reps")
+    private ArrayList<Integer> recReps;
 
-    @Column(name = "rec_sets")
+    @Column(name = "recommended_sets")
     private Integer recSets;
+
+    @Column(name = "muscle_group")
+    private Integer muscleGroup;
+
+    @Column(name = "user_id")
+    private Integer userId;
 
     public Integer getId() {
         return id;
@@ -46,11 +53,11 @@ public class RepWorkout {
         this.text = text;
     }
 
-    public Integer getRecReps() {
+    public ArrayList<Integer> getRecReps() {
         return recReps;
     }
 
-    public void setRecReps(Integer recReps) {
+    public void setRecReps(ArrayList<Integer> recReps) {
         this.recReps = recReps;
     }
 
@@ -60,5 +67,21 @@ public class RepWorkout {
 
     public void setRecSets(Integer recSets) {
         this.recSets = recSets;
+    }
+
+    public Integer getMuscleGroup() {
+        return muscleGroup;
+    }
+
+    public void setMuscleGroup(Integer muscleGroup) {
+        this.muscleGroup = muscleGroup;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 }

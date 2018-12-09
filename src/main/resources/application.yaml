@@ -7,7 +7,7 @@ spring:
       enabled: false
 
   datasource:
-    url: jdbc:postgresql://database:5432/muscleman
+    url: jdbc:postgresql://localhost:5432/muscleman
     username: postgres
     password: postgres
 
@@ -31,12 +31,12 @@ spring:
     prefix: classpath:/templates/
     suffix: .html
 
-logging:
-  level:
-    root: WARN
-    com.memorynotfound: DEBUG
-    org.springframework.web: INFO
-    org.springframework.security: INFO
+#logging:
+#  level:
+#    root: WARN
+#    com.memorynotfound: DEBUG
+#    org.springframework.web: INFO
+#    org.springframework.security: INFO
 #spring.datasource.url= jdbc:postgresql://database:5432/muscleman
 #spring.datasource.username=postgres
 #spring.datasource.password=postgres

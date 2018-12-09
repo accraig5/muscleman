@@ -1,4 +1,8 @@
 package com.example.muscleman.repository;
 
-public class TimeWorkoutRepository {
+import com.example.muscleman.model.RepWorkout;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TimeWorkoutRepository extends JpaRepository<RepWorkout, Integer> {
+
 }

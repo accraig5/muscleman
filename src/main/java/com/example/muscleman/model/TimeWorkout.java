@@ -16,7 +16,7 @@ public class TimeWorkout {
 
     private String description;
 
-    @Column(name = "rec_time")
+    @Column(name = "recommended_time")
     private String recTime;
 
     public Integer getId() {
