@@ -7,7 +7,7 @@ spring:
       enabled: false
 
   datasource:
-    url: jdbc:postgresql://databas:5432/muscleman
+    url: jdbc:postgresql://database:5432/muscleman
     username: postgres
     password: postgres
 
