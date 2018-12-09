@@ -86,7 +86,7 @@ public class HomeController {
             repWorkoutDto.setUserId(r.getUserId());
             repWorkoutDtos.add(repWorkoutDto);
         }
-        model.addAttribute("arrayList", repWorkoutDtos);
+        model.addAttribute("workouts", repWorkoutDtos);
 
         return "viewWorkouts";
     }
