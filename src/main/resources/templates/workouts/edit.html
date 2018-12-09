@@ -4,7 +4,7 @@
 </head>
 <body>
 <div class="container aboutrow" style="width: 50%; background-color: #E6E6E6">
-            <form id="addWorkoutRep" role="form" method="POST" th:action="@{/addWorkoutRep}" th:object="${repWorkout}">
+            <form id="addWorkoutRep" role="form" method="POST" th:action="@{/workouts/edit}" th:object="${workout}">
                 <div class="row">
                     <div class="col s12 m6">
                         <div class="alert alert-success" role="alert" th:if="${msg}" th:utext="${msg}">

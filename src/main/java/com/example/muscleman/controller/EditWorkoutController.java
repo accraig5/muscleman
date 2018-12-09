@@ -20,7 +20,7 @@ public class EditWorkoutController {
     @Autowired
     private RepWorkoutRepository repWorkoutRepository;
 
-    @RequestMapping(value = "editWorkoutRep", method = RequestMethod.POST)
+    @RequestMapping(value = "/workouts/edit", method = RequestMethod.POST)
     public String editWorkoutRep(
             @ModelAttribute("workout") @Valid RepWorkoutDto repWorkoutDto,
             BindingResult result,

@@ -24,7 +24,7 @@ public class AddWorkoutController {
     @Autowired
     private TimeWorkoutRepository timeWorkoutRepository;
 
-    @RequestMapping(value = "/addWorkoutRep", method = RequestMethod.POST)
+    @RequestMapping(value = "/workouts/add", method = RequestMethod.POST)
     public String addWorkoutRep(
             @ModelAttribute("workout") @Valid RepWorkoutDto repWorkoutDto,
             BindingResult result,

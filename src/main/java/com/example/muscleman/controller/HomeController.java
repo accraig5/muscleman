@@ -30,9 +30,9 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/userIndex")
+    @GetMapping("/users/index")
     public String userIndex() {
-        return "userIndex";
+        return "users/index";
     }
 
     @GetMapping("/login")
@@ -47,7 +47,7 @@ public class HomeController {
 
     @GetMapping("/test")
     public String test() {
-        return "test";
+        return "test/test";
     }
 
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
@@ -57,21 +57,21 @@ public class HomeController {
         return "registration";
     }
 
-    @RequestMapping(value = "/addWorkoutRep", method = RequestMethod.GET)
+    @RequestMapping(value = "/workouts/add", method = RequestMethod.GET)
     public String addWorkoutRep(WebRequest request, Model model) {
         RepWorkoutDto repWorkoutDto = new RepWorkoutDto();
         model.addAttribute("workout", repWorkoutDto);
-        return "addWorkoutRep";
+        return "workouts/add";
     }
 
-    @RequestMapping(value = "/editWorkoutRep", method = RequestMethod.GET)
+    @RequestMapping(value = "/workouts/edit", method = RequestMethod.GET)
     public String editWorkoutRep(WebRequest request, Model model) {
         RepWorkoutDto repWorkoutDto = new RepWorkoutDto();
         model.addAttribute("workout", repWorkoutDto);
-        return "editWorkoutRep";
+        return "workouts/edit";
     }
 
-    @RequestMapping(value = "/viewWorkouts", method = RequestMethod.GET)
+    @RequestMapping(value = "/workouts/view", method = RequestMethod.GET)
     public String viewWorkouts(Model model) {
         List<RepWorkout> repWorkouts = repWorkoutRepository.findAll();
         ArrayList<RepWorkoutDto> repWorkoutDtos = new ArrayList<>();
@@ -88,7 +88,7 @@ public class HomeController {
         }
         model.addAttribute("workouts", repWorkoutDtos);
 
-        return "viewWorkouts";
+        return "workouts/view";
     }
 
     @ExceptionHandler(ResourceNotFoundException.class)
