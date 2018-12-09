@@ -3,7 +3,6 @@ package com.example.muscleman.controller;
 import com.example.muscleman.dto.RepWorkoutDto;
 import com.example.muscleman.model.RepWorkout;
 import com.example.muscleman.repository.RepWorkoutRepository;
-import com.example.muscleman.repository.TimeWorkoutRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -16,20 +15,18 @@ import org.springframework.web.context.request.WebRequest;
 import javax.validation.Valid;
 
 @Controller
-public class AddWorkoutController {
+public class EditWorkoutController {
 
     @Autowired
     private RepWorkoutRepository repWorkoutRepository;
 
-    @Autowired
-    private TimeWorkoutRepository timeWorkoutRepository;
-
-    @RequestMapping(value = "/addWorkoutRep", method = RequestMethod.POST)
-    public String addWorkoutRep(
+    @RequestMapping(value = "editWorkoutRep", method = RequestMethod.POST)
+    public String editWorkoutRep(
             @ModelAttribute("workout") @Valid RepWorkoutDto repWorkoutDto,
             BindingResult result,
             WebRequest request,
             Errors errors) {
+        repWorkoutRepository.deleteById(repWorkoutDto.getId());
         RepWorkout repWorkout = new RepWorkout();
         repWorkout.setId(repWorkoutDto.getId());
         repWorkout.setName(repWorkoutDto.getName());
@@ -39,6 +36,6 @@ public class AddWorkoutController {
         repWorkout.setUserId(repWorkout.getUserId() == null ? -1 : repWorkout.getUserId());
         repWorkout.setMuscleGroup(repWorkout.getMuscleGroup());
         repWorkoutRepository.save(repWorkout);
-        return "addWorkoutRep";
+        return "editWorkoutRep";
     }
 }

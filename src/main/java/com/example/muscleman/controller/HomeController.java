@@ -18,7 +18,7 @@ import java.util.List;
 public class HomeController {
 
     @Autowired
-    RepWorkoutRepository repWorkoutRepository;
+    private RepWorkoutRepository repWorkoutRepository;
 
     @GetMapping("/")
     public String root() {
@@ -60,8 +60,15 @@ public class HomeController {
     @RequestMapping(value = "/addWorkoutRep", method = RequestMethod.GET)
     public String addWorkoutRep(WebRequest request, Model model) {
         RepWorkoutDto repWorkoutDto = new RepWorkoutDto();
-        model.addAttribute("repWorkout", repWorkoutDto);
+        model.addAttribute("workout", repWorkoutDto);
         return "addWorkoutRep";
+    }
+
+    @RequestMapping(value = "/editWorkoutRep", method = RequestMethod.GET)
+    public String editWorkoutRep(WebRequest request, Model model) {
+        RepWorkoutDto repWorkoutDto = new RepWorkoutDto();
+        model.addAttribute("workout", repWorkoutDto);
+        return "editWorkoutRep";
     }
 
     @RequestMapping(value = "/viewWorkouts", method = RequestMethod.GET)
