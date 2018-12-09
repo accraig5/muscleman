@@ -1,5 +1,6 @@
 package com.example.muscleman.controller;
 
+import com.example.muscleman.dto.RepWorkoutDto;
 import com.example.muscleman.dto.UserDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -20,9 +21,9 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/user")
+    @GetMapping("/userIndex")
     public String userIndex() {
-        return "user/index";
+        return "userIndex";
     }
 
     @GetMapping("/login")
@@ -45,6 +46,13 @@ public class HomeController {
         UserDto userDto = new UserDto();
         model.addAttribute("user", userDto);
         return "registration";
+    }
+
+    @RequestMapping(value = "/addWorkoutRep", method = RequestMethod.GET)
+    public String addWorkoutRep(WebRequest request, Model model) {
+        RepWorkoutDto repWorkoutDto = new RepWorkoutDto();
+        model.addAttribute("repWorkout", repWorkoutDto);
+        return "addWorkoutRep";
     }
 
     @ExceptionHandler(ResourceNotFoundException.class)

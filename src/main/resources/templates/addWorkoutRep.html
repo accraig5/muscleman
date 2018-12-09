@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+<div class="container aboutrow" style="width: 50%; background-color: #E6E6E6">
+            <form id="addWorkoutRep" role="form" method="POST" th:action="@{/addWorkoutRep}" th:object="${repWorkout}">
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="alert alert-success" role="alert" th:if="${msg}" th:utext="${msg}">
+                        </div>
+                    </div>
+                </div>
+                <div class="section row">
+                    <div class="input-field col s12">
+                        <input id="id" th:field="*{id}" name="id" type="text" required="true">
+                        <label for="id">Id::</label>
+                        <span class="helper-text" data-error="Enter Your Id" data-success="">Please enter your Id</span>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="name" th:field="*{name}" name="name" type="text" required="true">
+                        <label for="name">Name:</label>
+                        <span class="helper-text" data-error="Enter Your Name" data-success="">Please enter your Name</span>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="text" th:field="*{text}" name="text" type="text" required="true">
+                        <label for="text">Text:</label>
+                        <span class="helper-text" data-error="Enter a Text" data-success="">Please enter a Text</span>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="muscleGroup" th:field="*{muscleGroup}" name="muscleGroup" type="text" required="true">
+                        <label for="muscleGroup">MuscleGroup:</label>
+                        <span class="helper-text" data-error="Enter Your MuscleGroup" data-success="">Please enter your MuscleGroup</span>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="userId" th:field="*{userId}" name="userId" type="text" required="true">
+                        <label for="userId">UserId:</label>
+                        <span class="helper-text" data-error="Enter a UserId" data-success="">Please enter a UserId</span>
+                    </div>
+                </div>
+                <div class="col s12 l6">
+                    <button id="add_workout_rep_submit" class="grey darken-2 btn waves-effect waves-light right disabled" type="submit" form="register" name="action" style="margin-bottom: 5%;">Register
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+        </form>
+        </div>
+</body>
+</html>

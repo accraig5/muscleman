@@ -2,7 +2,9 @@ package com.example.muscleman.model;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import java.util.ArrayList;
+
+import static org.junit.Assert.assertEquals;
 
 public class RepWorkoutTest {
 
@@ -51,15 +53,21 @@ public class RepWorkoutTest {
     @Test
     public void getRecReps() {
         RepWorkout reps = new RepWorkout();
-        reps.setRecReps(10);
-        assertEquals(10, (long)reps.getRecReps());
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        arrayList.add(5);
+        arrayList.add(6);
+        reps.setRecReps(arrayList);
+        assertEquals(arrayList, reps.getRecReps());
     }
 
     @Test
     public void setRecReps() {
         RepWorkout reps = new RepWorkout();
-        reps.setRecReps(10);
-        assertEquals(10, (long)reps.getRecReps());
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        arrayList.add(5);
+        arrayList.add(6);
+        reps.setRecReps(arrayList);
+        assertEquals(arrayList, reps.getRecReps());
     }
 
     @Test
