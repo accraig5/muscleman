@@ -2,14 +2,23 @@ package com.example.muscleman.controller;
 
 import com.example.muscleman.dto.RepWorkoutDto;
 import com.example.muscleman.dto.UserDto;
+import com.example.muscleman.model.RepWorkout;
+import com.example.muscleman.repository.RepWorkoutRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class HomeController {
+
+    @Autowired
+    RepWorkoutRepository repWorkoutRepository;
 
     @GetMapping("/")
     public String root() {
@@ -53,6 +62,26 @@ public class HomeController {
         RepWorkoutDto repWorkoutDto = new RepWorkoutDto();
         model.addAttribute("repWorkout", repWorkoutDto);
         return "addWorkoutRep";
+    }
+
+    @RequestMapping(value = "/viewWorkouts", method = RequestMethod.GET)
+    public String viewWorkouts(Model model) {
+        List<RepWorkout> repWorkouts = repWorkoutRepository.findAll();
+        ArrayList<RepWorkoutDto> repWorkoutDtos = new ArrayList<>();
+        for (RepWorkout r : repWorkouts) {
+            RepWorkoutDto repWorkoutDto = new RepWorkoutDto();
+            repWorkoutDto.setId(r.getId());
+            repWorkoutDto.setMuscleGroup(r.getMuscleGroup());
+            repWorkoutDto.setName(r.getName());
+            repWorkoutDto.setRecReps(r.getRecReps());
+            repWorkoutDto.setRecSets(r.getRecSets());
+            repWorkoutDto.setText(r.getText());
+            repWorkoutDto.setUserId(r.getUserId());
+            repWorkoutDtos.add(repWorkoutDto);
+        }
+        model.addAttribute("arrayList", repWorkoutDtos);
+
+        return "viewWorkouts";
     }
 
     @ExceptionHandler(ResourceNotFoundException.class)
