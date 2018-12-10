@@ -82,7 +82,6 @@
                             </div>
                         </div>
                         <div class="section row">
-                            <input style="display: none;" type="text" name="workoutId" th:field="${workout.id}" />
                             <div class="input-field col s12">
                                 <input id="repsComplete" th:field="*{repsComplete}" name="repsComplete" type="text" required="true">
                                 <label for="repsComplete">Number of sets completed:</label>
@@ -100,8 +99,8 @@
                             </div>
                         </div>
                         <div class="col s12 l6">
-                            <button id="editWorkout_submit" class="grey darken-2 btn waves-effect waves-light center" type="submit" form="startworkout" name="action" style="margin-bottom: 5%;">Complete
-                                <i class="material-icons right">send</i>
+                            <button id="workout_submit" class="grey darken-2 btn waves-effect waves-light center" type="submit" form="startworkout" name="action" style="margin-bottom: 5%;">Complete
+                                <i class="material-icons right">fitness_center</i>
                             </button>
                         </div>
                     </form>

@@ -67,13 +67,13 @@
                     <th th:text="${workout.recReps}"></th>
                     <th th:text="${workout.recSets}"></th>
                     <input style="display: none;" type="text" name="workoutId" th:value="${workout.id}" />
-                    <th><button id="editworkout_button" class="grey darken-2 btn waves-effect waves-light right" type="submit" name="action" style="margin-bottom: 5%;">Edit
+                    <th><button id="edit_workout_button" class="grey darken-2 btn waves-effect waves-light right" type="submit" name="action" style="margin-bottom: 5%;">Edit
                         <i class="material-icons right">edit</i>
                     </button></th>
                 </form>
                 <form role="form" action="/workouts/delete" method="POST">
                     <input style="display: none;" type="text" name="workoutId" th:value="${workout.id}" />
-                    <th><button id="editworkout_button" class="red darken-2 btn waves-effect waves-light right" type="submit" name="action" style="margin-bottom: 5%;">Delete
+                    <th><button id="delete_workout_button" class="red darken-2 btn waves-effect waves-light right" type="submit" name="action" style="margin-bottom: 5%;">Delete
                         <i class="material-icons right">delete</i>
                     </button></th>
                 </form>
