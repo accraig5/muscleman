@@ -1,7 +1,5 @@
 package com.example.muscleman.dto;
 
-import com.example.muscleman.model.UserRepWorkout;
-
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
@@ -27,25 +25,6 @@ public class UserRepWorkoutDto {
     @NotNull
     @NotEmpty
     private String date;
-
-    public UserRepWorkoutDto(UserRepWorkout userRepWorkout) {
-        this.userId = userRepWorkout.getUserId();
-        this.workoutId = userRepWorkout.getWorkoutId();
-        repsComplete = "";
-        for (int i = 0; i < userRepWorkout.getRepsComplete().size() - 1; i++) {
-            repsComplete += userRepWorkout.getRepsComplete().get(i) + ", ";
-        }
-        repsComplete += userRepWorkout.getRepsComplete().get(userRepWorkout.getRepsComplete().size() - 1);
-
-        this.setsComplete = userRepWorkout.getSetsComplete();
-        weight = "";
-        for (int i = 0; i < userRepWorkout.getWeight().size(); i++) {
-            weight += userRepWorkout.getWeight().get(i) + ", ";
-        }
-        weight += userRepWorkout.getWeight().get(userRepWorkout.getWeight().size() - 1);
-
-        this.date = userRepWorkout.getDate();
-    }
 
     public Integer getUserId() {
         return userId;
