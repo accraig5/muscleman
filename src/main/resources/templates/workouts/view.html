@@ -43,10 +43,31 @@
 
 <main>
     <div class="white-text black padding z-depth-2" style="z-index:1000;"></div>
-    <div class="row" style="height: 60vh; ">
-        <ul th:each="workout : ${workouts}">
-            <li th:text="${workout.recReps[0]}"></li>
-        </ul>
+    <div class="container" style="height: 60vh; ">
+        <table class="highlight" style="padding-top: 5vh">
+            <thead>
+            <tr>
+                <th>Workout Name</th>
+                <th>Recommended Reps</th>
+                <th>Recommended Sets</th>
+                <th style="display: none;git"></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="workout : ${workouts}">
+                <form id="editworkout" role="form" action="/workouts/edit" method="POST">
+                    <th th:text="${workout.name}"></th>
+                    <th th:text="${workout.recReps[0]}"></th>
+                    <th th:text="${workout.recSets}"></th>
+                    <th><button id="editworkout_button" class="grey darken-2 btn waves-effect waves-light right" type="submit" name="action" form="editworkout" style="margin-bottom: 5%;">Edit
+                        <i class="material-icons right">send</i>
+                    </button></th>
+                </form>
+            </tr>
+            </tbody>
+
+        </table>
     </div>
 </main>
 
