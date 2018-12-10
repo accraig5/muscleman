@@ -126,11 +126,6 @@ public class HomeController {
         }
         Integer userId = userRepository.findByUsername(username).getUserId();
 
-        for (UserRepWorkout r : userRepWorkouts) {
-            if (r.getUserId() != userId && r.getUserId() != -1)
-                userRepWorkouts.remove(r);
-        }
-
         model.addAttribute("workouts", userRepWorkouts);
         return "workouts/view";
     }
