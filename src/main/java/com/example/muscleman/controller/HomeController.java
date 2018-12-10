@@ -127,7 +127,7 @@ public class HomeController {
         Integer userId = userRepository.findByUsername(username).getUserId();
 
         model.addAttribute("workouts", userRepWorkouts);
-        return "workouts/view";
+        return "users/completed";
     }
 
     @RequestMapping(value = "/workouts/start", method = RequestMethod.GET)
