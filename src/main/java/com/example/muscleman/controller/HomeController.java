@@ -107,11 +107,7 @@ public class HomeController {
             username = authentication.getName();
         }
         Integer userId = userRepository.findByUsername(username).getUserId();
-
-        for (RepWorkout r : repWorkouts) {
-            if (r.getUserId() != userId && r.getUserId() != -1)
-                repWorkouts.remove(r);
-        }
+        repWorkouts.removeIf(r -> r.getUserId() != userId && r.getUserId() != -1);
 
         model.addAttribute("workouts", repWorkouts);
         return "workouts/view";
