@@ -48,28 +48,61 @@
 
 <main>
     <div class="white-text black padding z-depth-2" style="z-index:1000;"></div>
-    <div class="container" style="overflow-y: scroll; height: 60vh; ">
-        <table class="highlight" style="margin-top: 5vh">
-            <thead>
-            <tr>
-                <th>Workout Name</th>
-                <th>Recommended Reps</th>
-                <th>Recommended Sets</th>
-                <th style="display: none;git"></th>
-            </tr>
-            </thead>
-
-            <tbody>
-            <tr th:each="workout : ${workouts}">
-                <form role="form" action="/workouts/edit" method="GET">
-                    <th th:text="${workout.name}"></th>
-                    <th th:text="${workout.recReps}"></th>
-                    <th th:text="${workout.recSets}"></th>
-                </form>
-            </tr>
-            </tbody>
-
-        </table>
+    <div class="container" style="overflow: inherit; height: 80vh; ">
+        <h1 class="center">Let's get started!</h1>
+        <div class="container">
+            <div class="row left" style="margin-top: 5vh;">
+                <div class="col s6">
+                    <h4>Workout Name:</h4>
+                </div>
+                <div class="col s4 offset-s2">
+                    <p th:text="${workout.name}"></p>
+                </div>
+            </div>
+            <div class="row left" style="margin-top: 5vh;">
+                <div class="col s6">
+                    <h4>Workout Description:</h4>
+                </div>
+                <div class="col s4 offset-s2">
+                    <p th:text="${workout.text}"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6">
+                    <span style="margin-top: 2vh;">Recommended Reps:  <span th:text="${workout.recReps}"></span></span><br>
+                    <span style="margin-top: 2vh;">Recommended Sets:  <span th:text="${workout.recSets}"></span></span><br>
+                    <a style="margin-top: 10vh;" class="waves-effect waves-light btn-large red lighten-2" href="../workouts/start"><i class="material-icons left">directions_run</i>Skip Workout</a>
+                </div>
+                <div class="col s6">
+                    <form id="startworkout" role="form" method="POST" th:action="@{/workouts/start}" th:object="${workout}">
+                        <div class="row">
+                            <div class="col s12 m6">
+                                <div class="alert alert-success" role="alert" th:if="${msg}" th:utext="${msg}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section row">
+                            <input style="display: none;" type="text" name="workoutId" th:field="${workout.id}" />
+                            <div class="input-field col s12">
+                                <input id="recReps" th:field="*{recReps}" name="recReps" type="text" required="true">
+                                <label for="recReps">Number of reps completed:</label>
+                                <span class="helper-text" data-error="Enter reps completed" data-success="">Enter number of reps completed per set</span>
+                            </div>
+                            <div class="input-field col s12">
+                                <input id="recSets" th:field="*{recSets}" name="recSets" type="text" required="true">
+                                <label for="recSets">Number of sets completed:</label>
+                                <span class="helper-text" data-error="Enter sets completed" data-success="">Enter number of sets completed</span>
+                            </div>
+                        </div>
+                        <div class="col s12 l6">
+                            <button id="editWorkout_submit" class="grey darken-2 btn waves-effect waves-light center" type="submit" form="startworkout" name="action" style="margin-bottom: 5%;">Complete
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </main>
 

@@ -56,6 +56,7 @@
                 <th>Recommended Reps</th>
                 <th>Recommended Sets</th>
                 <th style="display: none;git"></th>
+                <th style="display: none;git"></th>
             </tr>
             </thead>
 
@@ -67,7 +68,13 @@
                     <th th:text="${workout.recSets}"></th>
                     <input style="display: none;" type="text" name="workoutId" th:value="${workout.id}" />
                     <th><button id="editworkout_button" class="grey darken-2 btn waves-effect waves-light right" type="submit" name="action" style="margin-bottom: 5%;">Edit
-                        <i class="material-icons right">send</i>
+                        <i class="material-icons right">edit</i>
+                    </button></th>
+                </form>
+                <form role="form" action="/workouts/delete" method="POST">
+                    <input style="display: none;" type="text" name="workoutId" th:value="${workout.id}" />
+                    <th><button id="editworkout_button" class="red darken-2 btn waves-effect waves-light right" type="submit" name="action" style="margin-bottom: 5%;">Delete
+                        <i class="material-icons right">delete</i>
                     </button></th>
                 </form>
             </tr>
