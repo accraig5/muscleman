@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
 
 import java.util.List;
+import java.util.Random;
 
 @Controller
 public class HomeController {
@@ -90,6 +91,16 @@ public class HomeController {
         model.addAttribute("workouts", repWorkouts);
 
         return "workouts/view";
+    }
+
+    @RequestMapping(value = "/workouts/start", method = RequestMethod.GET)
+    public String startWorkout(Model model) {
+        List<RepWorkout> repWorkouts = repWorkoutRepository.findAll();
+        Random random = new Random();
+        Integer rand = random.nextInt(repWorkouts.size());
+        model.addAttribute("workout", repWorkouts.get(rand));
+
+        return "workouts/start";
     }
 
     @ExceptionHandler(ResourceNotFoundException.class)
