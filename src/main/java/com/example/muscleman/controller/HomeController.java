@@ -64,16 +64,16 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/workouts/edit", method = RequestMethod.GET)
-    public String editWorkoutRep(WebRequest request, Model model, @ModelAttribute("workoutName") String name) {
+    public String editWorkoutRep(WebRequest request, Model model, @ModelAttribute("workoutId") Integer id) {
         RepWorkoutDto repWorkoutDto = new RepWorkoutDto();
-        if (name != null) {
-            repWorkoutDto.setName(name);
-            RepWorkout repWorkout = repWorkoutRepository.findByName(name);
+        if (id != null) {
+            repWorkoutDto.setId(id);
+            RepWorkout repWorkout = repWorkoutRepository.findById(id).orElse(null);
             repWorkoutDto.setUserId(repWorkout.getUserId());
             repWorkoutDto.setName(repWorkout.getName());
             repWorkoutDto.setText(repWorkout.getText());
             repWorkoutDto.setRecSets(repWorkout.getRecSets());
-            repWorkoutDto.setId(repWorkout.getId());
+            repWorkoutDto.setName(repWorkout.getName());
             String list = "";
             for (int i = 0; i < repWorkout.getRecReps().size() - 1; i++)
                 list += repWorkout.getRecReps().get(i) + ", ";
