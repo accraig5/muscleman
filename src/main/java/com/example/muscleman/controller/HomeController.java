@@ -45,9 +45,9 @@ public class HomeController {
         return "error";
     }
 
-    @GetMapping("/test")
-    public String test() {
-        return "test/test";
+    @GetMapping("/users/profile")
+    public String userProfile() {
+        return "users/profile";
     }
 
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
