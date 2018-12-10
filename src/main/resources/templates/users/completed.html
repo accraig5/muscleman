@@ -52,7 +52,7 @@
         <table class="highlight" style="margin-top: 5vh">
             <thead>
             <tr>
-                <th>Workout Id</th>
+                <th>Workout Name</th>
                 <th>Reps Completed</th>
                 <th>Sets Completed</th>
                 <th>Weight Used</th>
@@ -64,7 +64,7 @@
             <tbody>
             <tr th:each="workout : ${workouts}">
                 <form role="form" action="/workouts/edit" method="GET">
-                    <th th:text="${workout.id}"></th>
+                    <th th:text="${workout.name}"></th>
                     <th th:text="${workout.repsComplete}"></th>
                     <th th:text="${workout.setsComplete}"></th>
                     <th th:text="${workout.weight}"></th>
