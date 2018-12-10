@@ -59,4 +59,16 @@ public class EditWorkoutController {
         repWorkoutRepository.save(repWorkout);
         return new ModelAndView("redirect:" + "/workouts/view");
     }
-}
+
+    @RequestMapping(value = "/workouts/delete", method = RequestMethod.POST)
+    public ModelAndView deleteWorkoutRep(
+            @ModelAttribute("workout") @Valid RepWorkoutDto repWorkoutDto,
+            BindingResult result,
+            WebRequest request,
+            Errors errors) {
+        repWorkoutRepository.deleteByName(repWorkoutDto.getName());
+
+        return new ModelAndView("redirect:" + "/workouts/view");
+    }
+
+    }
