@@ -46,7 +46,7 @@
     <div class="white-text black padding z-depth-2" style="z-index:1000;"></div>
     <div class="row" style="height: 70vh; margin-top: 4%;">
         <div class="container aboutrow" style="width: 50%; background-color: #E6E6E6">
-            <form id="register" role="form" method="POST" th:action="@{/workouts/add}" th:object="${workout}">
+            <form id="addWorkout" role="form" method="POST" th:action="@{/workouts/add}" th:object="${workout}">
                 <div class="row">
                     <div class="col s12 m6">
                         <div class="alert alert-success" role="alert" th:if="${msg}" th:utext="${msg}">
@@ -84,7 +84,7 @@
                     <span><a href="/workouts/edit">Click here to edit created workouts.</a></span>
                 </div>
                 <div class="col s12 l6">
-                    <button id="addWorkout_submit" class="grey darken-2 btn waves-effect waves-light right" type="submit" form="register" name="action" style="margin-bottom: 5%;">Add
+                    <button id="addWorkout_submit" class="grey darken-2 btn waves-effect waves-light right" type="submit" form="addWorkout" name="action" style="margin-bottom: 5%;">Add
                         <i class="material-icons right">send</i>
                     </button>
                 </div>

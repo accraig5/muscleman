@@ -1,10 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Muscle Manager is a new Generation workout tool, designed to help you succeed."/>
+    <meta name="keywords" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+    <!-- Links to script, css, and other -->
+    <link rel="icon" href="">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <title>MuscleManager | Home</title>
 </head>
+
 <body>
-<div class="container aboutrow" style="width: 50%; background-color: #E6E6E6">
-            <form id="addWorkoutRep" role="form" method="POST" th:action="@{/workouts/edit}" th:object="${workout}">
+<header>
+    <div id="1">
+        <nav class="black nav-down">
+            <div class="nav-wrapper">
+                <a id="logo-container" class="brand-logo valign-wrapper" href="/"><img src="" alt=""></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="../users/index">Home</a></li>
+                    <li><a href="">Profile</a></li>
+                    <li><a href="">Get Started</a></li>
+                    <li><a href="logout">Log Out</a></li>
+                </ul>
+
+                <ul id="nav-mobile" class="sidenav grey lighten-2">
+                    <li><a href="users/index">Home</a></li>
+                    <li><a href="">Profile</a></li>
+                    <li><a href="">Get Started</a></li>
+                    <li><a href="logout">Log Out</a></li>
+                </ul>
+                <a href="#" data-target="nav-mobile" class="sidenav-trigger valign-wrapper"><i class="material-icons white-text">menu</i></a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="white-text black padding z-depth-2" style="z-index:1000;"></div>
+    <div class="row" style="height: 70vh; margin-top: 4%;">
+        <div class="container aboutrow" style="width: 50%; background-color: #E6E6E6">
+            <form id="editworkout" role="form" method="POST" th:action="@{/workouts/add}" th:object="${workout}">
                 <div class="row">
                     <div class="col s12 m6">
                         <div class="alert alert-success" role="alert" th:if="${msg}" th:utext="${msg}">
@@ -13,37 +55,85 @@
                 </div>
                 <div class="section row">
                     <div class="input-field col s12">
-                        <input id="id" th:field="*{id}" name="id" type="text" required="true">
-                        <label for="id">Id::</label>
-                        <span class="helper-text" data-error="Enter Your Id" data-success="">Please enter your Id</span>
-                    </div>
-                    <div class="input-field col s12">
                         <input id="name" th:field="*{name}" name="name" type="text" required="true">
-                        <label for="name">Name:</label>
-                        <span class="helper-text" data-error="Enter Your Name" data-success="">Please enter your Name</span>
+                        <label for="name">Workout Name:</label>
+                        <span class="helper-text" data-error="Enter Your Workout Name" data-success="">Please enter your Workout Name</span>
                     </div>
                     <div class="input-field col s12">
                         <input id="text" th:field="*{text}" name="text" type="text" required="true">
-                        <label for="text">Text:</label>
-                        <span class="helper-text" data-error="Enter a Text" data-success="">Please enter a Text</span>
+                        <label for="text">Description:</label>
+                        <span class="helper-text" data-error="Add a Workout Description" data-success="">Add a quick workout description</span>
                     </div>
                     <div class="input-field col s12">
                         <input id="muscleGroup" th:field="*{muscleGroup}" name="muscleGroup" type="text" required="true">
-                        <label for="muscleGroup">MuscleGroup:</label>
-                        <span class="helper-text" data-error="Enter Your MuscleGroup" data-success="">Please enter your MuscleGroup</span>
+                        <label for="muscleGroup">Enter a Muscle Group:</label>
+                        <span class="helper-text" data-error="Enter a Muscle Group" data-success="">Please enter a Muscle Group</span>
                     </div>
                     <div class="input-field col s12">
-                        <input id="userId" th:field="*{userId}" name="userId" type="text" required="true">
-                        <label for="userId">UserId:</label>
-                        <span class="helper-text" data-error="Enter a UserId" data-success="">Please enter a UserId</span>
+                        <input id="recRepsList" th:field="*{recRepsList}" name="recRepsList" type="text" required="true">
+                        <label for="recRepsList">Recommended Reps:</label>
+                        <span class="helper-text" data-error="Enter a recommended number of reps" data-success="">Please enter a recommended number of reps per set</span>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="recSets" th:field="*{recSets}" name="recSets" type="text" required="true">
+                        <label for="recSets">Recommended Sets:</label>
+                        <span class="helper-text" data-error="Enter a recommended number of sets" data-success="">Please enter a recommended number of sets</span>
                     </div>
                 </div>
                 <div class="col s12 l6">
-                    <button id="add_workout_rep_submit" class="grey darken-2 btn waves-effect waves-light right disabled" type="submit" form="register" name="action" style="margin-bottom: 5%;">Register
+                    <span><a href="/workouts/view">Click here to view my workouts.</a></span>
+                </div>
+                <div class="col s12 l6">
+                    <button id="editWorkout_submit" class="grey darken-2 btn waves-effect waves-light right" type="submit" form="editworkout" name="action" style="margin-bottom: 5%;">Add
                         <i class="material-icons right">send</i>
                     </button>
                 </div>
-        </form>
+            </form>
         </div>
+    </div>
+</main>
+
+<footer class="page-footer grey darken-4">
+    <div class="container">
+        <div class="row">
+            <div id="footerContact" class="col s12 l6">
+                <h5 class="white-text">Muscle Manager</h5><br>
+                <div class="col s12 m6 l12 valign-wrapper leftfootericon"><i class="material-icons">contact_phone</i>&nbsp; (222)-222-222 &nbsp;</div>
+                <div class="col s12 m6 l12 valign-wrapper rightfootericon"><i class="material-icons">contact_mail</i>&nbsp; &nbsp;info@musclemanager.com &nbsp;</div>
+            </div>
+            <div class="col l3 s4 offset-s1">
+                <h5 class="white-text">Navigation</h5>
+                <ul id="footernav">
+                    <li><a class="white-text hovercolor" href="../user-home.hmtl">Home</a></li>
+                    <li><a class="white-text hovercolor" href="">Profile</a></li>
+                    <li><a class="white-text hovercolor" href="">Get Started</a></li>
+                    <li><a class="white-text hovercolor" href="logout">Log Out</a></li>
+                </ul>
+            </div>
+            <div class="col l3 s4 offset-s2">
+                <h5 class="white-text">Social Media</h5>
+                <ul>
+                    <li><a class="white-text hovercolor valign-wrapper" href=""><img src="../img/social_media/facebook.svg" alt="">&nbsp; Facebook</a></li>
+                    <li><a class="white-text hovercolor valign-wrapper" href=""><img src="../img/social_media/instagram.svg" alt="">&nbsp; Instagram</a></li>
+                    <li><a class="white-text hovercolor valign-wrapper" href="#!"><img src="../img/social_media/linkedin.svg" alt="">&nbsp; LinkedIn</a></li>
+                    <li><a class="white-text hovercolor valign-wrapper" href="#!"><img src="../img/social_media/twitter.svg" alt="">&nbsp; Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright black">
+        <div class="container valign-wrapper">
+            <i class="material-icons">copyright</i>&nbsp; Copyright &nbsp;<span class="grey-text lighten-3"> Muscle Manager LLC.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="../js/modernizr.js"></script>
+<script src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+<script src="../js/init.js"></script>
+
+
 </body>
+
 </html>
