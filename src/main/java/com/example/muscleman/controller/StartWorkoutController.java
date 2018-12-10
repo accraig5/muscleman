@@ -61,6 +61,9 @@ public class StartWorkoutController {
             weight.add(Integer.parseInt(s));
         }
 
+        userRepWorkout.setRepsComplete(repsComplete);
+        userRepWorkout.setWeight(weight);
+
         String username = null;
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (!(authentication instanceof AnonymousAuthenticationToken)) {
