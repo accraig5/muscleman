@@ -27,8 +27,8 @@
                 <a id="logo-container" class="brand-logo valign-wrapper" href="/"><img src="" alt=""></a>
                 <ul class="right hide-on-med-and-down">
                     <li class="activated"><a href="/users/index">Home</a></li>
-                    <li><a href="">Profile</a></li>
-                    <li><a href="">Get Started</a></li>
+                    <li><a href="/users/profile">Profile</a></li>
+                    <li><a href="../workouts/start">Get Started</a></li>
                     <li><form th:action="@{/logout}" method="post">
                         <input type="submit" value="Sign Out"/>
                     </form></li>
@@ -36,8 +36,8 @@
 
                 <ul id="nav-mobile" class="sidenav grey lighten-2">
                     <li><a href="/users/index">Home</a></li>
-                    <li><a href="">Profile</a></li>
-                    <li><a href="">Get Started</a></li>
+                    <li><a href="/users/profile">Profile</a></li>
+                    <li><a href="../workouts/start">Get Started</a></li>
                     <li><form th:action="@{/logout}" method="post">
                         <input type="submit" value="Sign Out"/>
                     </form></li>
@@ -76,10 +76,10 @@
             </div>
             <div class="row" style="padding-top: 5vh;">
                 <div class="col s6">
-                    <a class="waves-effect waves-light btn-large red lighten-2" href="../workouts/add"><i class="material-icons left">cloud</i>Add Workout</a>
+                    <a class="waves-effect waves-light btn-large red lighten-2" href="../workouts/add"><i class="material-icons left">add</i>Add Workout</a>
                 </div>
                 <div class="col s6">
-                    <a class="waves-effect waves-light btn-large red lighten-2" href=""><i class="material-icons left">cloud</i>Start Workout</a>
+                    <a class="waves-effect waves-light btn-large red lighten-2" href="../workouts/start"><i class="material-icons left">directions_run</i>Start Workout</a>
                 </div>
             </div>
         </div>
