@@ -2,6 +2,7 @@ package com.example.muscleman.controller;
 
 import com.example.muscleman.dto.RepWorkoutDto;
 import com.example.muscleman.dto.UserDto;
+import com.example.muscleman.dto.UserRepWorkoutDto;
 import com.example.muscleman.model.RepWorkout;
 import com.example.muscleman.model.UserRepWorkout;
 import com.example.muscleman.repository.RepWorkoutRepository;
@@ -126,7 +127,7 @@ public class HomeController {
         Random random = new Random();
         Integer rand = random.nextInt(repWorkouts.size());
         model.addAttribute("workout", repWorkouts.get(rand));
-        model.addAttribute("userWorkout", new UserRepWorkout());
+        model.addAttribute("userWorkout", new UserRepWorkoutDto());
 
         return "workouts/start";
     }

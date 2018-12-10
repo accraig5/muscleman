@@ -48,8 +48,8 @@ public class StartWorkoutController {
         }
         max = max + 1;
         userRepWorkout.setId(max);
-        userRepWorkout.setWorkoutId(repWorkoutDto.getId());
-        userRepWorkout.setName(repWorkoutDto.getName());
+        //userRepWorkout.setWorkoutId(repWorkoutDto.getId());
+        userRepWorkout.setName(userRepWorkoutDto.getName());
         userRepWorkout.setSetsComplete(userRepWorkoutDto.getSetsComplete());
         ArrayList<Integer> repsComplete = new ArrayList<>();
         ArrayList<String> repsCompleteStr = new ArrayList<>(Arrays.asList(userRepWorkoutDto.getRepsComplete().replaceAll("\\s+","").split(",")));

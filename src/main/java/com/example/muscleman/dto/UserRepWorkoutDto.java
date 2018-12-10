@@ -9,6 +9,8 @@ public class UserRepWorkoutDto {
     private Integer userId;
 
     @NotNull
+    private String name;
+
     private Integer workoutId;
 
     @NotNull
@@ -32,6 +34,14 @@ public class UserRepWorkoutDto {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Integer getWorkoutId() {
