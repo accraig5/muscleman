@@ -71,7 +71,7 @@
                         <i class="material-icons right">edit</i>
                     </button></th>
                 </form>
-                <form role="form" action="/workouts/delete" method="POST">
+                <form role="form" th:action="@{/workouts/delete}" method="POST">
                     <input style="display: none;" type="text" name="workoutId" th:value="${workout.id}" />
                     <th><button id="editworkout_button" class="red darken-2 btn waves-effect waves-light right" type="submit" name="action" style="margin-bottom: 5%;">Delete
                         <i class="material-icons right">delete</i>

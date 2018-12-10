@@ -60,11 +60,11 @@ public class EditWorkoutController {
 
     @RequestMapping(value = "/workouts/delete", method = RequestMethod.POST)
     public ModelAndView deleteWorkoutRep(
-            @ModelAttribute("workout") @Valid RepWorkoutDto repWorkoutDto,
+            @ModelAttribute("workoutId") Integer id,
             BindingResult result,
             WebRequest request,
             Errors errors) {
-        repWorkoutRepository.deleteByName(repWorkoutDto.getName());
+        repWorkoutRepository.deleteById(id);
 
         return new ModelAndView("redirect:" + "/workouts/view");
     }
