@@ -44,7 +44,7 @@
 <main>
     <div class="white-text black padding z-depth-2" style="z-index:1000;"></div>
     <div class="container" style="height: 60vh; ">
-        <table class="highlight" style="padding-top: 5vh">
+        <table class="highlight" style="margin-top: 5vh">
             <thead>
             <tr>
                 <th>Workout Name</th>
@@ -56,11 +56,12 @@
 
             <tbody>
             <tr th:each="workout : ${workouts}">
-                <form id="editworkout" role="form" action="/workouts/edit" method="POST">
+                <form role="form" action="/workouts/edit" method="GET">
                     <th th:text="${workout.name}"></th>
-                    <th th:text="${workout.recReps[0]}"></th>
+                    <th th:text="${workout.recReps}"></th>
                     <th th:text="${workout.recSets}"></th>
-                    <th><button id="editworkout_button" class="grey darken-2 btn waves-effect waves-light right" type="submit" name="action" form="editworkout" style="margin-bottom: 5%;">Edit
+                    <input style="display: none;" type="text" name="workoutName" th:value="${workout.name}" />
+                    <th><button id="editworkout_button" class="grey darken-2 btn waves-effect waves-light right" type="submit" name="action" style="margin-bottom: 5%;">Edit
                         <i class="material-icons right">send</i>
                     </button></th>
                 </form>
