@@ -36,7 +36,7 @@ public class EditWorkoutController {
             BindingResult result,
             WebRequest request,
             Errors errors) {
-        repWorkoutRepository.deleteById(repWorkoutDto.getId());
+        repWorkoutRepository.deleteByName(repWorkoutDto.getName());
         RepWorkout repWorkout = new RepWorkout();
         repWorkout.setId(repWorkoutDto.getId());
         repWorkout.setName(repWorkoutDto.getName());
