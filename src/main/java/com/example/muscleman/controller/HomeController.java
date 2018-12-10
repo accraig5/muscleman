@@ -64,8 +64,9 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/workouts/edit", method = RequestMethod.GET)
-    public String editWorkoutRep(WebRequest request, Model model) {
+    public String editWorkoutRep(WebRequest request, Model model, @ModelAttribute("workoutName") String name) {
         RepWorkoutDto repWorkoutDto = new RepWorkoutDto();
+        repWorkoutDto.setName(name);
         model.addAttribute("workout", repWorkoutDto);
         return "workouts/edit";
     }

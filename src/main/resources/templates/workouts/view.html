@@ -44,7 +44,9 @@
 <main>
     <div class="white-text black padding z-depth-2" style="z-index:1000;"></div>
     <div class="row" style="height: 60vh; ">
-
+        <ul th:each="workout : ${workouts}">
+            <li th:text="${workout.recReps[0]}"></li>
+        </ul>
     </div>
 </main>
 
