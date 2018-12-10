@@ -74,7 +74,7 @@
                     <a style="margin-top: 10vh;" class="waves-effect waves-light btn-large red lighten-2" href="../workouts/start"><i class="material-icons left">directions_run</i>Skip Workout</a>
                 </div>
                 <div class="col s6">
-                    <form id="startworkout" role="form" method="POST" th:action="@{/workouts/start}" th:object="${workout}">
+                    <form id="startworkout" role="form" method="POST" th:action="@{/workouts/start}" th:object="${userWorkout}">
                         <div class="row">
                             <div class="col s12 m6">
                                 <div class="alert alert-success" role="alert" th:if="${msg}" th:utext="${msg}">
