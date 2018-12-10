@@ -38,7 +38,7 @@ public class AddWorkoutController {
             WebRequest request,
             Errors errors) {
         RepWorkout repWorkout = new RepWorkout();
-        repWorkout.setId(repWorkoutRepository.findAll().size() + 1);
+        repWorkout.setId(repWorkoutRepository.findAll().get(repWorkoutRepository.findAll().size()).getId() + 1);
         repWorkout.setName(repWorkoutDto.getName());
         ArrayList<String> recRepsStr = new ArrayList<>(Arrays.asList(repWorkoutDto.getRecRepsList().replaceAll("\\s+","").split(",")));
         ArrayList<Integer> recReps = new ArrayList<>();
