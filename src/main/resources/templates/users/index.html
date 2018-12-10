@@ -1,13 +1,132 @@
 <!DOCTYPE html>
+<html lang="en">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
 <head>
-    <title>Hello World!</title>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Muscle Manager is a new Generation workout tool, designed to help you succeed."/>
+    <meta name="keywords" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+    <!-- Links to script, css, and other -->
+    <link rel="icon" href="">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <title>MuscleManager | Home</title>
 </head>
+
 <body>
-<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-<form th:action="@{/logout}" method="post">
-    <input type="submit" value="Sign Out"/>
-</form>
+<header>
+    <div id="1">
+        <nav class="black nav-down">
+            <div class="nav-wrapper">
+                <a id="logo-container" class="brand-logo valign-wrapper" href="/"><img src="" alt=""></a>
+                <ul class="right hide-on-med-and-down">
+                    <li class="activated"><a href="users/index">Home</a></li>
+                    <li><a href="">Profile</a></li>
+                    <li><a href="">Get Started</a></li>
+                    <li><form th:action="@{/logout}" method="post">
+                        <input type="submit" value="Sign Out"/>
+                    </form></li>
+                </ul>
+
+                <ul id="nav-mobile" class="sidenav grey lighten-2">
+                    <li><a href="users/index">Home</a></li>
+                    <li><a href="">Profile</a></li>
+                    <li><a href="">Get Started</a></li>
+                    <li><form th:action="@{/logout}" method="post">
+                        <input type="submit" value="Sign Out"/>
+                    </form></li>
+                </ul>
+                <a href="#" data-target="nav-mobile" class="sidenav-trigger valign-wrapper"><i class="material-icons white-text">menu</i></a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div id="index_1" class="parallax-container">
+        <div class="section no-pad">
+            <div class="container">
+                <br><br>
+                <h1 class="header center black-text">Welcome [[${#httpServletRequest.remoteUser}]]!</h1>
+                <br><br>
+            </div>
+        </div>
+        <div id="scrolldownarrow" class="container">
+            <div class="row center">
+                <h5 class="header col s12 light black-text">Let's get started</h5>
+            </div>
+            <div class="row center">
+                <a><i id="scrollbtn1" class="material-icons md-48" >arrow_downward</i></a>
+            </div>
+        </div>
+        <div class="parallax"><img src="../img/user_home.jpg" alt="MM Workout"></div>
+    </div>
+
+    <div class="container" id="scrollabout">
+        <div class="section center">
+
+            <div class="row">
+                <h2 class="center">What would you like to do?</h2>
+            </div>
+            <div class="row" style="padding-top: 5vh;">
+                <div class="col s6">
+                    <a class="waves-effect waves-light btn-large red lighten-2" href="../workouts/add"><i class="material-icons left">cloud</i>Add Workout</a>
+                </div>
+                <div class="col s6">
+                    <a class="waves-effect waves-light btn-large red lighten-2" href=""><i class="material-icons left">cloud</i>Start Workout</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer class="page-footer grey darken-4">
+    <div class="container">
+        <div class="row">
+            <div id="footerContact" class="col s12 l6">
+                <h5 class="white-text">Muscle Manager</h5><br>
+                <div class="col s12 m6 l12 valign-wrapper leftfootericon"><i class="material-icons">contact_phone</i>&nbsp; (222)-222-222 &nbsp;</div>
+                <div class="col s12 m6 l12 valign-wrapper rightfootericon"><i class="material-icons">contact_mail</i>&nbsp; &nbsp;info@musclemanager.com &nbsp;</div>
+            </div>
+            <div class="col l3 s4 offset-s1">
+                <h5 class="white-text">Navigation</h5>
+                <ul id="footernav">
+                    <li><a class="white-text hovercolor" href="index">Home</a></li>
+                    <li><a class="white-text hovercolor" href="login">Login</a></li>
+                    <li><a class="white-text hovercolor" href="/">How To Use</a></li>
+                    <li><a class="white-text hovercolor" href="/">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="col l3 s4 offset-s2">
+                <h5 class="white-text">Social Media</h5>
+                <ul>
+                    <li><a class="white-text hovercolor valign-wrapper" href=""><img src="img/social_media/facebook.svg" alt="">&nbsp; Facebook</a></li>
+                    <li><a class="white-text hovercolor valign-wrapper" href=""><img src="img/social_media/instagram.svg" alt="">&nbsp; Instagram</a></li>
+                    <li><a class="white-text hovercolor valign-wrapper" href="#!"><img src="img/social_media/linkedin.svg" alt="">&nbsp; LinkedIn</a></li>
+                    <li><a class="white-text hovercolor valign-wrapper" href="#!"><img src="img/social_media/twitter.svg" alt="">&nbsp; Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright black">
+        <div class="container valign-wrapper">
+            <i class="material-icons">copyright</i>&nbsp; Copyright &nbsp;<span class="grey-text lighten-3"> Muscle Manager LLC.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="../js/modernizr.js"></script>
+<script src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+<script src="../js/init.js"></script>
+
 </body>
+
 </html>
