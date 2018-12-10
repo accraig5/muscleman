@@ -52,7 +52,7 @@
         <table class="highlight" style="margin-top: 5vh">
             <thead>
             <tr>
-                <th>Workout Name</th>
+                <th>Workout Id</th>
                 <th>Reps Completed</th>
                 <th>Sets Completed</th>
                 <th>Weight Used</th>
@@ -64,20 +64,10 @@
             <tbody>
             <tr th:each="workout : ${workouts}">
                 <form role="form" action="/workouts/edit" method="GET">
-                    <th th:text="${workout.name}"></th>
-                    <th th:text="${workout.repsCompleted}"></th>
-                    <th th:text="${workout.setsCompleted}"></th>
+                    <th th:text="${workout.id}"></th>
+                    <th th:text="${workout.repsComplete}"></th>
+                    <th th:text="${workout.setsComplete}"></th>
                     <th th:text="${workout.weight}"></th>
-                    <input style="display: none;" type="text" name="workoutId" th:value="${workout.id}" />
-                    <th><button id="editworkout_button" class="grey darken-2 btn waves-effect waves-light right" type="submit" name="action" style="margin-bottom: 5%;">Edit
-                        <i class="material-icons right">edit</i>
-                    </button></th>
-                </form>
-                <form role="form" action="/workouts/delete" method="POST">
-                    <input style="display: none;" type="text" name="workoutId" th:value="${workout.id}" />
-                    <th><button id="editworkout_button" class="red darken-2 btn waves-effect waves-light right" type="submit" name="action" style="margin-bottom: 5%;">Delete
-                        <i class="material-icons right">delete</i>
-                    </button></th>
                 </form>
             </tr>
             </tbody>
