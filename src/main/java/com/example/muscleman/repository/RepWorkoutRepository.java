@@ -5,4 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface RepWorkoutRepository extends JpaRepository<RepWorkout, Integer> {
     void deleteByName(String name);
+    RepWorkout findByName(String name);
 }
