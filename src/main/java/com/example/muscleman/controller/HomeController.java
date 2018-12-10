@@ -126,6 +126,7 @@ public class HomeController {
         Random random = new Random();
         Integer rand = random.nextInt(repWorkouts.size());
         model.addAttribute("workout", repWorkouts.get(rand));
+        model.addAttribute("userWorkout", new UserRepWorkout());
 
         return "workouts/start";
     }

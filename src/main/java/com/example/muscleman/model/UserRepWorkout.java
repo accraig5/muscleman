@@ -10,8 +10,9 @@ import java.util.ArrayList;
 @Table(name = "user_rep_workout")
 public class UserRepWorkout {
 
-
     @Id
+    private Integer id;
+
     @Column(name = "user_id")
     private Integer userId;
 
@@ -25,6 +26,14 @@ public class UserRepWorkout {
     private ArrayList<Integer> weight;
 
     private String date;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public Integer getUserId() {
         return userId;

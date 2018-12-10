@@ -38,8 +38,15 @@ public class StartWorkoutController {
             BindingResult result,
             WebRequest request,
             Errors errors) {
-
         UserRepWorkout userRepWorkout = new UserRepWorkout();
+        Integer max = -1;
+        ArrayList<UserRepWorkout> userRepWorkouts = new ArrayList<>(userRepWorkoutRepository.findAll());
+        for (UserRepWorkout r : userRepWorkouts) {
+            if (r.getId() > max)
+                max = r.getId();
+        }
+        max = max + 1;
+        userRepWorkout.setId(max);
         userRepWorkout.setWorkoutId(userRepWorkoutDto.getWorkoutId());
         userRepWorkout.setSetsComplete(userRepWorkoutDto.getSetsComplete());
         ArrayList<Integer> repsComplete = new ArrayList<>();
