@@ -54,7 +54,7 @@ public class EditWorkoutController {
         }
         repWorkout.setUserId(username == null ? -1 : userRepository.findByUsername(username).getUserId());
 
-        repWorkout.setMuscleGroup(repWorkout.getMuscleGroup());
+        repWorkout.setMuscleGroup(repWorkoutDto.getMuscleGroup());
         repWorkoutRepository.save(repWorkout);
         return new ModelAndView("redirect:" + "/workouts/view");
     }
