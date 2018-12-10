@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ public class EditWorkoutController {
     private UserRepository userRepository;
 
     @RequestMapping(value = "/workouts/edit", method = RequestMethod.POST)
-    public String editWorkoutRep(
+    public ModelAndView editWorkoutRep(
             @ModelAttribute("workout") @Valid RepWorkoutDto repWorkoutDto,
             BindingResult result,
             WebRequest request,
@@ -39,7 +40,7 @@ public class EditWorkoutController {
         RepWorkout repWorkout = new RepWorkout();
         repWorkout.setId(repWorkoutDto.getId());
         repWorkout.setName(repWorkoutDto.getName());
-        ArrayList<String> recRepsStr = new ArrayList<>(Arrays.asList(repWorkoutDto.getRecRepsList().split(",")));
+        ArrayList<String> recRepsStr = new ArrayList<>(Arrays.asList(repWorkoutDto.getRecRepsList().replaceAll("\\s+","").split(",")));
         ArrayList<Integer> recReps = new ArrayList<>();
         recRepsStr.forEach(x -> recReps.add(Integer.parseInt(x)));
         repWorkout.setRecReps(recReps);
@@ -55,6 +56,6 @@ public class EditWorkoutController {
 
         repWorkout.setMuscleGroup(repWorkout.getMuscleGroup());
         repWorkoutRepository.save(repWorkout);
-        return "editWorkoutRep";
+        return new ModelAndView("redirect:" + "/workouts/view");
     }
 }
