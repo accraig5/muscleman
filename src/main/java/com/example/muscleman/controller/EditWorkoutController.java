@@ -37,7 +37,6 @@ public class EditWorkoutController {
             WebRequest request,
             Errors errors) {
         Integer id = repWorkoutRepository.findByName(repWorkoutDto.getName()).getId();
-        repWorkoutRepository.deleteByName(repWorkoutDto.getName());
         RepWorkout repWorkout = new RepWorkout();
         repWorkout.setId(id);
         repWorkout.setName(repWorkoutDto.getName());
