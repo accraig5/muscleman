@@ -63,6 +63,6 @@ public class StartWorkoutController {
         userRepWorkout.setDate(Date.from(Instant.now()).toString());
 
         userRepWorkoutRepository.save(userRepWorkout);
-        return new ModelAndView("redirect:" + "/user/view");
+        return new ModelAndView("redirect:" + "/workouts/start");
     }
 }
