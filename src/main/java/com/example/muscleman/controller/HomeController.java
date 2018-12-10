@@ -87,6 +87,7 @@ public class HomeController {
             repWorkoutDto.setText(repWorkout.getText());
             repWorkoutDto.setRecSets(repWorkout.getRecSets());
             repWorkoutDto.setName(repWorkout.getName());
+            repWorkoutDto.setMuscleGroup(repWorkout.getMuscleGroup());
             String list = "";
             for (int i = 0; i < repWorkout.getRecReps().size() - 1; i++)
                 list += repWorkout.getRecReps().get(i) + ", ";
