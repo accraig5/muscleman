@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-    <title>MuscleManager | Workouts</title>
+    <title>MuscleManager | Profile</title>
 </head>
 
 <body>
@@ -25,7 +25,7 @@
                 <a id="logo-container" class="brand-logo valign-wrapper" href="/"><img src="" alt=""></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="users/index">Home</a></li>
-                    <li><a href="users/profile">Profile</a></li>
+                    <li class="activated"><a href="users/profile">Profile</a></li>
                     <li><a href="">Get Started</a></li>
                     <li><form th:action="@{/logout}" method="post">
                         <input type="submit" value="Sign Out"/>
@@ -48,33 +48,6 @@
 
 <main>
     <div class="white-text black padding z-depth-2" style="z-index:1000;"></div>
-    <div class="container" style="overflow-y: scroll; height: 60vh; ">
-        <table class="highlight" style="margin-top: 5vh">
-            <thead>
-            <tr>
-                <th>Workout Name</th>
-                <th>Recommended Reps</th>
-                <th>Recommended Sets</th>
-                <th style="display: none;git"></th>
-            </tr>
-            </thead>
-
-            <tbody>
-            <tr th:each="workout : ${workouts}">
-                <form role="form" action="/workouts/edit" method="GET">
-                    <th th:text="${workout.name}"></th>
-                    <th th:text="${workout.recReps}"></th>
-                    <th th:text="${workout.recSets}"></th>
-                    <input style="display: none;" type="text" name="workoutId" th:value="${workout.id}" />
-                    <th><button id="editworkout_button" class="grey darken-2 btn waves-effect waves-light right" type="submit" name="action" style="margin-bottom: 5%;">Edit
-                        <i class="material-icons right">send</i>
-                    </button></th>
-                </form>
-            </tr>
-            </tbody>
-
-        </table>
-    </div>
 </main>
 
 <footer class="page-footer grey darken-4">
