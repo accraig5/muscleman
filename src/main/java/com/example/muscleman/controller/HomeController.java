@@ -3,9 +3,15 @@ package com.example.muscleman.controller;
 import com.example.muscleman.dto.RepWorkoutDto;
 import com.example.muscleman.dto.UserDto;
 import com.example.muscleman.model.RepWorkout;
+import com.example.muscleman.model.UserRepWorkout;
 import com.example.muscleman.repository.RepWorkoutRepository;
+import com.example.muscleman.repository.UserRepWorkoutRepository;
+import com.example.muscleman.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +25,12 @@ public class HomeController {
 
     @Autowired
     private RepWorkoutRepository repWorkoutRepository;
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private UserRepWorkoutRepository userRepWorkoutRepository;
 
     @GetMapping("/")
     public String root() {
@@ -88,8 +100,38 @@ public class HomeController {
     @RequestMapping(value = "/workouts/view", method = RequestMethod.GET)
     public String viewWorkouts(Model model) {
         List<RepWorkout> repWorkouts = repWorkoutRepository.findAll();
-        model.addAttribute("workouts", repWorkouts);
+        String username = null;
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (!(authentication instanceof AnonymousAuthenticationToken)) {
+            username = authentication.getName();
+        }
+        Integer userId = userRepository.findByUsername(username).getUserId();
 
+        for (RepWorkout r : repWorkouts) {
+            if (r.getUserId() != userId)
+                repWorkouts.remove(r);
+        }
+
+        model.addAttribute("workouts", repWorkouts);
+        return "workouts/view";
+    }
+
+    @RequestMapping(value = "/users/completed", method = RequestMethod.GET)
+    public String viewCompleted(Model model) {
+        List<UserRepWorkout> userRepWorkouts = userRepWorkoutRepository.findAll();
+        String username = null;
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (!(authentication instanceof AnonymousAuthenticationToken)) {
+            username = authentication.getName();
+        }
+        Integer userId = userRepository.findByUsername(username).getUserId();
+
+        for (UserRepWorkout r : userRepWorkouts) {
+            if (r.getUserId() != userId)
+                userRepWorkouts.remove(r);
+        }
+
+        model.addAttribute("workouts", userRepWorkouts);
         return "workouts/view";
     }
 
