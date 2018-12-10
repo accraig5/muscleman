@@ -61,10 +61,10 @@
     <main>
       <div class="white-text black padding z-depth-2" style="z-index:1000;"></div>
       <div class="row" style="height: 60vh; margin-top: 4%;">
-        <div th:if="${param.error}">
+        <div class="center-align" style="padding-bottom: 2vh;" th:if="${param.error}">
           Invalid username and password.
         </div>
-        <div th:if="${param.logout}">
+        <div class="center-align" style="padding-bottom: 2vh;" th:if="${param.logout}">
           You have been logged out.
         </div>
         <div id="contactFillout" class="container aboutrow" style="width: 50%; background-color: #E6E6E6">
