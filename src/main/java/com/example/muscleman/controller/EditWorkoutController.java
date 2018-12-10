@@ -36,9 +36,8 @@ public class EditWorkoutController {
             BindingResult result,
             WebRequest request,
             Errors errors) {
-        Integer id = repWorkoutRepository.findByName(repWorkoutDto.getName()).getId();
         RepWorkout repWorkout = new RepWorkout();
-        repWorkout.setId(id);
+        repWorkout.setId(repWorkoutDto.getId());
         repWorkout.setName(repWorkoutDto.getName());
         ArrayList<String> recRepsStr = new ArrayList<>(Arrays.asList(repWorkoutDto.getRecRepsList().replaceAll("\\s+","").split(",")));
         ArrayList<Integer> recReps = new ArrayList<>();
