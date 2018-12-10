@@ -19,6 +19,8 @@ public class UserRepWorkout {
     @Column(name = "workout_id")
     private Integer workoutId;
 
+    private String name;
+
     private ArrayList<Integer> repsComplete;
 
     private Integer setsComplete;
@@ -49,6 +51,14 @@ public class UserRepWorkout {
 
     public void setWorkoutId(Integer workoutId) {
         this.workoutId = workoutId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public ArrayList<Integer> getRepsComplete() {
