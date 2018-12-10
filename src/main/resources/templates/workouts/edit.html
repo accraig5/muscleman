@@ -54,29 +54,30 @@
                     </div>
                 </div>
                 <div class="section row">
+                    <input style="display: none;" type="text" name="workoutId" th:value="${workout.id}" />
                     <div class="input-field col s12">
                         <input id="name" th:field="*{name}" name="name" type="text" required="true">
-                        <label for="name">Workout Name:</label>
+                        <label for="name">Edit Workout Name:</label>
                         <span class="helper-text" data-error="Enter Your Workout Name" data-success="">Please enter your Workout Name</span>
                     </div>
                     <div class="input-field col s12">
                         <input id="text" th:field="*{text}" name="text" type="text" required="true">
-                        <label for="text">Description:</label>
+                        <label for="text">Edit Description:</label>
                         <span class="helper-text" data-error="Add a Workout Description" data-success="">Add a quick workout description</span>
                     </div>
                     <div class="input-field col s12">
                         <input id="muscleGroup" th:field="*{muscleGroup}" name="muscleGroup" type="text" required="true">
-                        <label for="muscleGroup">Enter a Muscle Group:</label>
+                        <label for="muscleGroup">Edit Muscle Group:</label>
                         <span class="helper-text" data-error="Enter a Muscle Group" data-success="">Please enter a Muscle Group</span>
                     </div>
                     <div class="input-field col s12">
                         <input id="recRepsList" th:field="*{recRepsList}" name="recRepsList" type="text" required="true">
-                        <label for="recRepsList">Recommended Reps:</label>
+                        <label for="recRepsList">Edit Recommended Reps:</label>
                         <span class="helper-text" data-error="Enter a recommended number of reps" data-success="">Please enter a recommended number of reps per set</span>
                     </div>
                     <div class="input-field col s12">
                         <input id="recSets" th:field="*{recSets}" name="recSets" type="text" required="true">
-                        <label for="recSets">Recommended Sets:</label>
+                        <label for="recSets">Edit Recommended Sets:</label>
                         <span class="helper-text" data-error="Enter a recommended number of sets" data-success="">Please enter a recommended number of sets</span>
                     </div>
                 </div>
@@ -84,7 +85,7 @@
                     <span><a href="/workouts/view">Click here to view my workouts.</a></span>
                 </div>
                 <div class="col s12 l6">
-                    <button id="editWorkout_submit" class="grey darken-2 btn waves-effect waves-light right" type="submit" form="editworkout" name="action" style="margin-bottom: 5%;">Add
+                    <button id="editWorkout_submit" class="grey darken-2 btn waves-effect waves-light right" type="submit" form="editworkout" name="action" style="margin-bottom: 5%;">Edit
                         <i class="material-icons right">send</i>
                     </button>
                 </div>
