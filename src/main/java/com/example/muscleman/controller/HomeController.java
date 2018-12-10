@@ -108,7 +108,7 @@ public class HomeController {
         Integer userId = userRepository.findByUsername(username).getUserId();
 
         for (RepWorkout r : repWorkouts) {
-            if (r.getUserId() != userId)
+            if (r.getUserId() != userId && r.getUserId() != -1)
                 repWorkouts.remove(r);
         }
 
@@ -127,7 +127,7 @@ public class HomeController {
         Integer userId = userRepository.findByUsername(username).getUserId();
 
         for (UserRepWorkout r : userRepWorkouts) {
-            if (r.getUserId() != userId)
+            if (r.getUserId() != userId && r.getUserId() != -1)
                 userRepWorkouts.remove(r);
         }
 
