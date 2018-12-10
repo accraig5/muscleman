@@ -70,5 +70,4 @@ public class EditWorkoutController {
 
         return new ModelAndView("redirect:" + "/workouts/view");
     }
-
-    }
+}
