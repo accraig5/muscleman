@@ -119,13 +119,6 @@ public class HomeController {
     @RequestMapping(value = "/users/completed", method = RequestMethod.GET)
     public String viewCompleted(Model model) {
         List<UserRepWorkout> userRepWorkouts = userRepWorkoutRepository.findAll();
-        String username = null;
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (!(authentication instanceof AnonymousAuthenticationToken)) {
-            username = authentication.getName();
-        }
-        Integer userId = userRepository.findByUsername(username).getUserId();
-
         model.addAttribute("workouts", userRepWorkouts);
         return "users/completed";
     }
