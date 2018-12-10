@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-    <title>MuscleManager | Profile</title>
+    <title>MuscleManager | Workouts</title>
 </head>
 
 <body>
@@ -47,28 +47,42 @@
 </header>
 
 <main>
-    <div class="container" style="height: 70vh; ">
-        <div class="section no-pad">
-            <div class="container">
-                <br><br>
-                <h1 class="header center black-text">[[${#httpServletRequest.remoteUser}]]'s Profile</h1>
-                <br><br>
-            </div>
-        </div>
-        <div class="section center">
+    <div class="white-text black padding z-depth-2" style="z-index:1000;"></div>
+    <div class="container" style="overflow-y: scroll; height: 60vh; ">
+        <table class="highlight" style="margin-top: 5vh">
+            <thead>
+            <tr>
+                <th>Workout Name</th>
+                <th>Reps Completed</th>
+                <th>Sets Completed</th>
+                <th>Weight Used</th>
+                <th style="display: none;git"></th>
+                <th style="display: none;git"></th>
+            </tr>
+            </thead>
 
-            <div class="row">
-                <h2 class="center">What would you like to do?</h2>
-            </div>
-            <div class="row" style="padding-top: 5vh;">
-                <div class="col s6">
-                    <a class="waves-effect waves-light btn-large red lighten-2" href="../workouts/view"><i class="material-icons left">data_usage</i>View Custom Workouts</a>
-                </div>
-                <div class="col s6">
-                    <a class="waves-effect waves-light btn-large red lighten-2" href="/users/completed"><i class="material-icons left">done</i>View Completed Workouts</a>
-                </div>
-            </div>
-        </div>
+            <tbody>
+            <tr th:each="workout : ${workouts}">
+                <form role="form" action="/workouts/edit" method="GET">
+                    <th th:text="${workout.name}"></th>
+                    <th th:text="${workout.repsCompleted}"></th>
+                    <th th:text="${workout.setsCompleted}"></th>
+                    <th th:text="${workout.weight}"></th>
+                    <input style="display: none;" type="text" name="workoutId" th:value="${workout.id}" />
+                    <th><button id="editworkout_button" class="grey darken-2 btn waves-effect waves-light right" type="submit" name="action" style="margin-bottom: 5%;">Edit
+                        <i class="material-icons right">edit</i>
+                    </button></th>
+                </form>
+                <form role="form" action="/workouts/delete" method="POST">
+                    <input style="display: none;" type="text" name="workoutId" th:value="${workout.id}" />
+                    <th><button id="editworkout_button" class="red darken-2 btn waves-effect waves-light right" type="submit" name="action" style="margin-bottom: 5%;">Delete
+                        <i class="material-icons right">delete</i>
+                    </button></th>
+                </form>
+            </tr>
+            </tbody>
+
+        </table>
     </div>
 </main>
 

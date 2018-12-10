@@ -84,14 +84,19 @@
                         <div class="section row">
                             <input style="display: none;" type="text" name="workoutId" th:field="${workout.id}" />
                             <div class="input-field col s12">
-                                <input id="recReps" th:field="*{recReps}" name="recReps" type="text" required="true">
-                                <label for="recReps">Number of reps completed:</label>
-                                <span class="helper-text" data-error="Enter reps completed" data-success="">Enter number of reps completed per set</span>
+                                <input id="repsComplete" th:field="*{repsComplete}" name="repsComplete" type="text" required="true">
+                                <label for="repsComplete">Number of sets completed:</label>
+                                <span class="helper-text" data-error="Enter sets completed" data-success="">Enter number of sets completed</span>
                             </div>
                             <div class="input-field col s12">
-                                <input id="recSets" th:field="*{recSets}" name="recSets" type="text" required="true">
-                                <label for="recSets">Number of sets completed:</label>
+                                <input id="setsComplete" th:field="*{setsComplete}" name="setsComplete" type="text" required="true">
+                                <label for="setsComplete">Number of sets completed:</label>
                                 <span class="helper-text" data-error="Enter sets completed" data-success="">Enter number of sets completed</span>
+                            </div>
+                            <div class="input-field col s12">
+                                <input id="weight" th:field="*{weight}" name="weight" type="text" required="true">
+                                <label for="weight">Weight Used:</label>
+                                <span class="helper-text" data-error="Enter weight used" data-success="">Enter the weight used in the exercise</span>
                             </div>
                         </div>
                         <div class="col s12 l6">
