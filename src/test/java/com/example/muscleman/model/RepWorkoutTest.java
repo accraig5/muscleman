@@ -83,4 +83,32 @@ public class RepWorkoutTest {
         reps.setRecSets(10);
         assertEquals(10, (long)reps.getRecSets());
     }
+
+    @Test
+    public void getMuscleGroup() {
+        RepWorkout reps = new RepWorkout();
+        reps.setMuscleGroup(10);
+        assertEquals(10, (long)reps.getMuscleGroup());
+    }
+
+    @Test
+    public void setMuscleGroup() {
+        RepWorkout reps = new RepWorkout();
+        reps.setMuscleGroup(10);
+        assertEquals(10, (long)reps.getMuscleGroup());
+    }
+
+    @Test
+    public void getUserId() {
+        RepWorkout reps = new RepWorkout();
+        reps.setUserId(1);
+        assertEquals(1, (long)reps.getUserId());
+    }
+
+    @Test
+    public void setUserId() {
+        RepWorkout reps = new RepWorkout();
+        reps.setUserId(1);
+        assertEquals(1, (long)reps.getUserId());
+    }
 }

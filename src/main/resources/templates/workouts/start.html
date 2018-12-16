@@ -83,6 +83,7 @@
                         </div>
                         <div class="section row">
                             <input style="display: none;" type="text" name="workoutId" th:field="*{workoutId}" th:value="${workout.id}" />
+                            <input style="display: none;" type="text" name="workoutName" th:field="*{name}" th:value="${workout.name}" />
                             <div class="input-field col s12">
                                 <input id="repsComplete" th:field="*{repsComplete}" name="repsComplete" type="text" required="true">
                                 <label for="repsComplete">Number of reps completed:<git /label>

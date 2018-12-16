@@ -2,12 +2,25 @@ package com.example.muscleman.model;
 
 import org.junit.Test;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.ArrayList;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class UserRepWorkoutTest {
+
+    @Test
+    public void getId() {
+        UserRepWorkout reps = new UserRepWorkout();
+        reps.setId(12345);
+        assertEquals((long)12345, (long)reps.getId());
+    }
+
+    @Test
+    public void setId() {
+        UserRepWorkout reps = new UserRepWorkout();
+        reps.setId(12345);
+        assertEquals((long)12345, (long)reps.getId());
+    }
 
     @Test
     public void getUserId() {
@@ -35,6 +48,21 @@ public class UserRepWorkoutTest {
         UserRepWorkout reps = new UserRepWorkout();
         reps.setWorkoutId(12345);
         assertEquals((long)12345, (long)reps.getWorkoutId());
+    }
+
+
+    @Test
+    public void getName() {
+        UserRepWorkout reps = new UserRepWorkout();
+        reps.setName("name");
+        assertEquals("name", reps.getName());
+    }
+
+    @Test
+    public void setName() {
+        UserRepWorkout reps = new UserRepWorkout();
+        reps.setName("name");
+        assertEquals("name", reps.getName());
     }
 
     @Test
