@@ -1,9 +1,8 @@
 package com.example.muscleman.controller;
 
+import com.example.muscleman.dto.RepWorkoutDto;
 import com.example.muscleman.dto.UserRepWorkoutDto;
-import com.example.muscleman.model.RepWorkout;
 import com.example.muscleman.model.UserRepWorkout;
-import com.example.muscleman.repository.RepWorkoutRepository;
 import com.example.muscleman.repository.UserRepWorkoutRepository;
 import com.example.muscleman.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,15 +30,12 @@ public class StartWorkoutController {
     UserRepository userRepository;
 
     @Autowired
-    RepWorkoutRepository repWorkoutRepository;
-
-    @Autowired
     UserRepWorkoutRepository userRepWorkoutRepository;
 
     @RequestMapping(value = "/workouts/start", method = RequestMethod.POST)
     public ModelAndView startWorkoutRep(
             @ModelAttribute("userWorkout") UserRepWorkoutDto userRepWorkoutDto,
-            @ModelAttribute("workout") RepWorkout repWorkout,
+            @ModelAttribute("workout") RepWorkoutDto repWorkoutDto,
             BindingResult result,
             WebRequest request,
             Errors errors) {
@@ -52,8 +48,8 @@ public class StartWorkoutController {
         }
         max = max + 1;
         userRepWorkout.setId(max);
-        //userRepWorkout.setWorkoutId(repWorkout.getId());
-        //userRepWorkout.setName(repWorkout.getName());
+        //userRepWorkout.setWorkoutId(repWorkoutDto.getId());
+        userRepWorkout.setName(userRepWorkoutDto.getName());
         userRepWorkout.setSetsComplete(userRepWorkoutDto.getSetsComplete());
         ArrayList<Integer> repsComplete = new ArrayList<>();
         ArrayList<String> repsCompleteStr = new ArrayList<>(Arrays.asList(userRepWorkoutDto.getRepsComplete().replaceAll("\\s+","").split(",")));
